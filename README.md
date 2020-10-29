@@ -300,7 +300,7 @@ _В этом примере при переклчюении родительск
 ```json
 {
   "title": "Personal Loot",
-  "//label": "это значение будет проигнорировано",
+  "//label": " -> это значение будет проигнорировано <- ",
   "label": "Visible label",
   "id": "personalLoot",
   "type": "checkbox",
