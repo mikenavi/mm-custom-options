@@ -179,12 +179,12 @@ _В этом примере при переклчюении родительск
   {
     ...
     "id": "id1",
-    "parent": ["parentId1"],
+    "parents": ["parentId1"],
     "series": "siblings"
   },
   {
     "id": "id2",
-    "parent": ["parentId2"],
+    "parents": ["parentId2"],
     "series": "siblings"
   }
 ]
