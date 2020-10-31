@@ -135,6 +135,7 @@
 `itemLink` - тип: строка
 - принимает HTML, не совсемтим с режиомом `image`
 - _пример_ `<a href=\"https://de.wowhead.com/achievement=14194/hallen-der-hingabe\" target=\"_blank\" title=\"Halls of Devotion\" rel=\"noopener noreferrer\">Hallen der Hingabe</a>`
+- не забывать экранировать кавычки `"` => `\"`,
 
 ## `button`
 Содержит одно или несколько значений ключа `values`, множественный выбор значения в группе.
