@@ -187,7 +187,6 @@ _В этом примере при переклчюении родительск
 ```json
 "values": [
   {
-    ...
     "id": "id1",
     "parents": ["parentId1"],
     "series": "siblings"
