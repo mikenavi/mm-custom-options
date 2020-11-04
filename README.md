@@ -328,3 +328,1016 @@ _В этом примере при переклчюении родительск
   ]
 }
 ```
+
+## Пример конфига
+
+```json
+[
+  {
+    "title": "Items group",
+    "id": "items",
+    "size": "is-full",
+    "type": "checkbox",
+    "values": [
+      {
+        "name": "Hallen der Hingabe",
+        "itemLink": "<a href=\"https://de.wowhead.com/achievement=14194/hallen-der-hingabe\" target=\"_blank\" title=\"Halls of Devotion\" rel=\"noopener noreferrer\">Hallen der Hingabe</a>",
+        "comment": "comment",
+        "price": 10.00,
+        "default": false,
+        "id": "items1"
+      },
+      {
+        "name": "Verschlüsselte Schrift aus Ny'alotha",
+        "itemLink": "<a href=\"https://ptr.wowhead.com/item=169223/ashjrakamas-shroud-of-resolve\" title=\"Ashjra'kamas, Shroud of Resolve\" target=\"_blank\" rel=\"noopener noreferrer\">Ashjra'kamas, Shroud of Resolve</a>",
+        "comment": "comment",
+        "price": 20.00,
+        "default": false,
+        "id": "items2",
+        "parents": ["simple-select8"]
+      }
+    ]
+  },
+  {
+    "title": "custom select image",
+    "label": "",
+    "comment": "Comment for select",
+    "size": "is-half",
+    "id": "select-simple",
+    "type": "select",
+    "values": [
+      {
+        "name": "simple-select1",
+        "price": 17.95,
+        "default": true,
+        "id": "simple-select7"
+      },
+      {
+        "name": "simple-select2",
+        "price": 19.95,
+        "default": false,
+        "id": "simple-select8",
+        "comment": "option comment"
+      },
+      {
+        "name": "simple-select3",
+        "price": 21.95,
+        "default": false,
+        "id": "simple-select9"
+      },
+      {
+        "name": "simple-select4",
+        "price": 23.95,
+        "default": false,
+        "id": "simple-select10"
+      },
+      {
+        "name": "simple-select5",
+        "price": 26.95,
+        "default": false,
+        "id": "simple-select11"
+      }
+    ]
+  },
+  {
+    "title": "Switch",
+    "id": "switch",
+    "size": "is-half",
+    "type": "switch",
+    "values": [
+      {
+        "name": "Sharing",
+        "comment": "Our player logs in to your character and plays during the boost",
+        "price": 5,
+        "default": false,
+        "id": "playMethodValueAcc5"
+      },
+      {
+        "name": "Selfplay",
+        "comment": "Join our players team and play yourself during the boost",
+        "price": 0,
+        "default": true,
+        "id": "playMethodValueSelf10"
+      }
+    ]
+  },
+  {
+    "title": "Switch",
+    "id": "switch2",
+    "size": "is-full",
+    "type": "switch",
+    "values": [
+      {
+        "name": "Sharing",
+        "comment": "Our player logs in to your character and plays during the boost",
+        "price": 5,
+        "priceLabel": 0,
+        "default": true,
+        "id": "1playMethodValueAcc5"
+      },
+      {
+        "name": "Selfplay",
+        "comment": "Join our players team and play yourself during the boost",
+        "price": 0,
+        "priceLabel": 0,
+        "default": false,
+        "id": "2playMethodValueSelf10"
+      },
+      {
+        "name": "Sharing",
+        "comment": "Our player logs in to your character and plays during the boost",
+        "price": 5,
+        "default": false,
+        "id": "3playMethodValueAcc5"
+      },
+      {
+        "name": "Selfplay",
+        "comment": "Join our players team and play yourself during the boost",
+        "price": 0,
+        "default": false,
+        "id": "4playMethodValueSelf10"
+      },
+      {
+        "name": "Sharing",
+        "comment": "Our player logs in to your character and plays during the boost",
+        "price": 5,
+        "default": false,
+        "id": "5playMethodValueAcc5"
+      }
+    ]
+  },
+  {
+    "title": "Image Radio",
+    "id": "playMethodasd",
+    "size": "is-half",
+    "type": "radio",
+    "required": true,
+    "values": [
+      {
+        "name": "Account Sharing",
+        "comment": "Our player logs in to your character and plays during the boost",
+        "price": 5,
+        "default": false,
+        "id": "playMethodValueAccasd",
+        "image": "https://static-shpf.mageworx.com/img/uploads/productoptions/3212/b7eddc21b66a8e47ffdbd714453f69b4.png"
+      },
+      {
+        "name": "Selfplay",
+        "comment": "Join our players team and play yourself during the boost",
+        "price": 0,
+        "default": false,
+        "id": "playMethodValueSelf0asd",
+        "image": "https://static-shpf.mageworx.com/img/uploads/productoptions/3212/b7eddc21b66a8e47ffdbd714453f69b4.png"
+      },
+      {
+        "name": "Selfplay",
+        "comment": "Join our players team and play yourself during the boost",
+        "price": 0,
+        "disabled": true,
+        "default": false,
+        "id": "playMethodValueSelf0asd00",
+        "image": "https://static-shpf.mageworx.com/img/uploads/productoptions/3212/b7eddc21b66a8e47ffdbd714453f69b4.png"
+      }
+    ]
+  },
+  {
+    "title": "Timer Option",
+    "comment": "Choose your run whether within timer or not",
+    "id": "timerOptionzxc",
+    "size": "is-full",
+    "type": "checkbox",
+    "invalidMessage": "Custom message",
+    "required": true,
+    "minLimit": 2,
+    "maxLimit": 3,
+    "values": [
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 0,
+        "default": false,
+        "id": "timerOptionYes1zxc",
+        "image": "https://static-shpf.mageworx.com/img/uploads/productoptions/3212/b7eddc21b66a8e47ffdbd714453f69b4.png"
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 3,
+        "default": false,
+        "id": "timerOptionYes2zxc",
+        "image": "https://static-shpf.mageworx.com/img/uploads/productoptions/3212/b7eddc21b66a8e47ffdbd714453f69b4.png"
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 4,
+        "default": false,
+        "id": "timerOptionYes3zxc",
+        "image": "https://static-shpf.mageworx.com/img/uploads/productoptions/3212/b7eddc21b66a8e47ffdbd714453f69b4.png"
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 5,
+        "default": false,
+        "id": "timerOptionYes4zxc",
+        "image": "https://static-shpf.mageworx.com/img/uploads/productoptions/3212/b7eddc21b66a8e47ffdbd714453f69b4.png"
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 5,
+        "default": false,
+        "id": "timerOptionYes5zxc",
+        "image": "https://static-shpf.mageworx.com/img/uploads/productoptions/3212/b7eddc21b66a8e47ffdbd714453f69b4.png"
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 5,
+        "default": false,
+        "id": "timerOptionYes6zxc",
+        "image": "https://static-shpf.mageworx.com/img/uploads/productoptions/3212/b7eddc21b66a8e47ffdbd714453f69b4.png"
+      }
+    ]
+  },
+  {
+    "title": "Widget Notification",
+    "id": "widget",
+    "type": "hidden",
+    "values": [
+      {
+        "name": "WIDGET",
+        "comment": "",
+        "price": 0,
+        "default": true,
+        "id": "widget"
+      }
+    ]
+  },
+  {
+    "title": "Input",
+    "comment": "Comment for input",
+    "id": "input3",
+    "required": true,
+    "size": "is-full",
+    "type": "text-input",
+    "values": [
+      {
+        "name": "",
+        "price": 0,
+        "default": true,
+        "id": "input4"
+      }
+    ]
+  },
+  {
+    "title": "Input",
+    "comment": "Comment for input",
+    "id": "input",
+    "size": "is-half",
+    "type": "text-input",
+    "values": [
+      {
+        "name": "",
+        "price": 0,
+        "default": true,
+        "id": "input1"
+      }
+    ]
+  },
+  {
+    "title": "custom select image",
+    "label": "",
+    "comment": "Comment for select",
+    "size": "is-full",
+    "id": "select-custom36",
+    "type": "select-custom",
+    "values": [
+      {
+        "name": "custom-select1",
+        "price": 17.95,
+        "default": true,
+        "id": "custom-select37"
+      },
+      {
+        "name": "custom-select2",
+        "price": 19.95,
+        "default": false,
+        "id": "custom-select38",
+        "comment": "option comment"
+      },
+      {
+        "name": "custom-select3",
+        "price": 21.95,
+        "default": false,
+        "id": "custom-select39"
+      },
+      {
+        "name": "custom-select4",
+        "price": 23.95,
+        "default": false,
+        "id": "custom-select310"
+      },
+      {
+        "name": "custom-select5",
+        "price": 26.95,
+        "default": false,
+        "id": "custom-select311"
+      }
+    ]
+  },
+  {
+    "title": "custom select image",
+    "label": "",
+    "comment": "Comment for select",
+    "size": "is-half",
+    "id": "select-custom6",
+    "type": "select-custom",
+    "image": "https://cdn.shopify.com/s/files/1/0987/2678/files/wow-farm-transmog_91e71ca3-3d64-41a1-8309-5061fd572a0f.png?4880513842382269742",
+    "values": [
+      {
+        "name": "custom-select1",
+        "price": 17.95,
+        "default": true,
+        "id": "custom-select7"
+      },
+      {
+        "name": "custom-select2",
+        "price": 19.95,
+        "default": false,
+        "id": "custom-select8",
+        "comment": "option comment"
+      },
+      {
+        "name": "custom-select3",
+        "price": 21.95,
+        "default": false,
+        "id": "custom-select9"
+      },
+      {
+        "name": "custom-select4",
+        "price": 23.95,
+        "default": false,
+        "id": "custom-select10"
+      },
+      {
+        "name": "custom-select5",
+        "price": 26.95,
+        "default": false,
+        "id": "custom-select11"
+      }
+    ]
+  },
+  {
+    "title": "custom select",
+    "label": "",
+    "comment": "Comment for select",
+    "size": "is-half",
+    "id": "select-custom",
+    "type": "select-custom",
+    "values": [
+      {
+        "name": "custom-select1",
+        "price": 17.95,
+        "default": true,
+        "id": "custom-select1",
+        "image": "https://cdn.shopify.com/s/files/1/0987/2678/files/raid1.png?2233282437125190411"
+      },
+      {
+        "name": "custom-select2",
+        "price": 19.95,
+        "default": false,
+        "id": "custom-select2",
+        "comment": "option comment",
+        "image": "https://cdn.shopify.com/s/files/1/0987/2678/files/trophy3.png?2233282437125190411"
+      },
+      {
+        "name": "custom-select3",
+        "price": 21.95,
+        "default": false,
+        "id": "custom-select3",
+        "image": "https://cdn.shopify.com/s/files/1/0987/2678/files/raid1.png?2233282437125190411"
+      },
+      {
+        "name": "custom-select4",
+        "price": 23.95,
+        "default": false,
+        "id": "custom-select4",
+        "image": "https://cdn.shopify.com/s/files/1/0987/2678/files/raid1.png?2233282437125190411"
+      },
+      {
+        "name": "custom-select5",
+        "price": 26.95,
+        "default": false,
+        "id": "custom-select5",
+        "image": "https://cdn.shopify.com/s/files/1/0987/2678/files/raid1.png?2233282437125190411"
+      }
+    ]
+  },
+  {
+    "title": "Key",
+    "label": "Pick a key level:",
+    "id": "key3",
+    "size": "is-full",
+    "type": "select-key",
+    "quick": [
+      "keyValue103",
+      "keyValue125"
+    ],
+    "values": [
+      {
+        "name": "MYTHIC +10",
+        "priceLabel": 17.95,
+        "price": 17.95,
+        "default": true,
+        "id": "keyValue103"
+      },
+      {
+        "name": "MYTHIC +11",
+        "priceLabel": 19.95,
+        "price": 19.95,
+        "default": false,
+        "id": "keyValue114"
+      },
+      {
+        "name": "MYTHIC +12",
+        "priceLabel": 21.95,
+        "price": 21.95,
+        "default": false,
+        "id": "keyValue125"
+      },
+      {
+        "name": "MYTHIC +13",
+        "priceLabel": 23.95,
+        "price": 23.95,
+        "default": false,
+        "id": "keyValue136"
+      },
+      {
+        "name": "MYTHIC +14",
+        "priceLabel": 26.95,
+        "price": 26.95,
+        "default": false,
+        "id": "keyValue147"
+      },
+      {
+        "name": "MYTHIC +15",
+        "priceLabel": 29.95,
+        "price": 29.95,
+        "default": false,
+        "id": "keyValue158"
+      }
+    ]
+  },
+  {
+    "title": "Key",
+    "label": "Pick a key level:",
+    "id": "key2",
+    "size": "is-half",
+    "type": "select-key",
+    "quick": [
+      "keyValue10",
+      "keyValue15"
+    ],
+    "values": [
+      {
+        "name": "MYTHIC +10",
+        "priceLabel": 17.95,
+        "price": 17.95,
+        "default": true,
+        "id": "keyValue10"
+      },
+      {
+        "name": "MYTHIC +11",
+        "priceLabel": 19.95,
+        "price": 19.95,
+        "default": false,
+        "id": "keyValue11"
+      },
+      {
+        "name": "MYTHIC +12",
+        "priceLabel": 21.95,
+        "price": 21.95,
+        "default": false,
+        "id": "keyValue12"
+      },
+      {
+        "name": "MYTHIC +13",
+        "priceLabel": 23.95,
+        "price": 23.95,
+        "default": false,
+        "id": "keyValue13"
+      },
+      {
+        "name": "MYTHIC +14",
+        "priceLabel": 26.95,
+        "price": 26.95,
+        "default": false,
+        "id": "keyValue14"
+      },
+      {
+        "name": "MYTHIC +15",
+        "priceLabel": 29.95,
+        "price": 29.95,
+        "default": false,
+        "id": "keyValue15"
+      }
+    ]
+  },
+  {
+    "title": "Play Method",
+    "id": "playMethod",
+    "size": "is-half",
+    "type": "radio",
+    "values": [
+      {
+        "name": "Account Sharing",
+        "comment": "Our player logs in to your character and plays during the boost",
+        "price": 5,
+        "default": false,
+        "id": "playMethodValueAcc"
+      },
+      {
+        "name": "Selfplay",
+        "comment": "Join our players team and play yourself during the boost",
+        "price": 0,
+        "default": true,
+        "id": "playMethodValueSelf0"
+      },
+      {
+        "name": "Selfplay",
+        "comment": "Join our players team and play yourself during the boost",
+        "price": 0,
+        "disabled": true,
+        "default": true,
+        "id": "playMethodValueSelf000"
+      }
+    ]
+  },
+  {
+    "title": "Timer Option",
+    "comment": "Choose your run whether within timer or not",
+    "id": "timerOption",
+    "size": "is-full",
+    "type": "checkbox",
+    "values": [
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 0,
+        "default": false,
+        "id": "timerOptionYes1",
+        "series": "timerOptionYes",
+        "parents": [
+          "keyValue10",
+          "keyValue11",
+          "keyValue12"
+        ]
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 0,
+        "default": false,
+        "id": "timerOptionYes10000",
+        "series": "timerOptionYes",
+        "disabled": true,
+        "parents": [
+          "keyValue10",
+          "keyValue11",
+          "keyValue12"
+        ]
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 3,
+        "default": false,
+        "id": "timerOptionYes2",
+        "series": "timerOptionYes",
+        "parents": [
+          "keyValue13"
+        ]
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 4,
+        "default": false,
+        "id": "timerOptionYes3",
+        "series": "timerOptionYes",
+        "parents": [
+          "keyValue14"
+        ]
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 5,
+        "default": false,
+        "id": "timerOptionYes4",
+        "series": "timerOptionYes",
+        "parents": [
+          "keyValue15"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Loot Trading",
+    "id": "loottrade",
+    "size": "is-full",
+    "type": "radio",
+    "values": [
+      {
+        "name": "Personal Loot",
+        "comment": "Run with Personal Loot option means that quantity of items you will get fully depends on your luck, which we wish you most of all :)",
+        "price": 0,
+        "default": true,
+        "id": "loottrade10No",
+        "parents": [
+          "keyValue10",
+          "keyValue11",
+          "keyValue12",
+          "keyValue13",
+          "keyValue14",
+          "keyValue15"
+        ]
+      },
+      {
+        "name": "+1 Loot-Trader",
+        "comment": "There will be 1 player with the same armor type in your group who will trade you all items he MAY get as reward from the end of dungeon chest and thus this item IS NOT GUARANTEED. ",
+        "price": 3,
+        "default": false,
+        "id": "loottrade10x1",
+        "parents": [
+          "keyValue10"
+        ]
+      },
+      {
+        "name": "+2 Loot-Traders",
+        "comment": "There will be 2 players with the same armor type in your group who will trade you all items they may get as reward from the end of dungeon chest and thus the items ARE NOT GUARANTEED.",
+        "price": 6,
+        "default": false,
+        "id": "loottrade10x2",
+        "parents": [
+          "keyValue10"
+        ]
+      },
+      {
+        "name": "+1 Loot-Trader",
+        "comment": "There will be 1 player with the same armor type in your group who will trade you all items he MAY get as reward from the end of dungeon chest and thus this item IS NOT GUARANTEED. ",
+        "price": 4,
+        "default": false,
+        "id": "loottrade11x1",
+        "parents": [
+          "keyValue11",
+          "keyValue12",
+          "keyValue13"
+        ]
+      },
+      {
+        "name": "+2 Loot-Traders",
+        "comment": "There will be 2 players with the same armor type in your group who will trade you all items they may get as reward from the end of dungeon chest and thus the items ARE NOT GUARANTEED.",
+        "price": 8,
+        "default": false,
+        "id": "loottrade11x2",
+        "parents": [
+          "keyValue11",
+          "keyValue12",
+          "keyValue13"
+        ]
+      },
+      {
+        "name": "+1 Loot-Trader",
+        "comment": "There will be 1 player with the same armor type in your group who will trade you all items he MAY get as reward from the end of dungeon chest and thus this item IS NOT GUARANTEED. ",
+        "price": 5,
+        "default": false,
+        "id": "loottrade14x1",
+        "parents": [
+          "keyValue14",
+          "keyValue15"
+        ]
+      },
+      {
+        "name": "+2 Loot-Traders",
+        "comment": "There will be 2 players with the same armor type in your group who will trade you all items they may get as reward from the end of dungeon chest and thus the items ARE NOT GUARANTEED.",
+        "price": 10,
+        "default": false,
+        "id": "loottrade14x2",
+        "parents": [
+          "keyValue14",
+          "keyValue15"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Loot Trading",
+    "id": "loottrade1",
+    "size": "is-half",
+    "type": "radio",
+    "values": [
+      {
+        "name": "Personal Loot",
+        "comment": "Run with Personal Loot option means that quantity of items you will get fully depends on your luck, which we wish you most of all :)",
+        "price": 0,
+        "default": true,
+        "id": "loottrade10No2",
+        "parents": [
+          "keyValue10",
+          "keyValue11",
+          "keyValue12",
+          "keyValue13",
+          "keyValue14",
+          "keyValue15"
+        ]
+      },
+      {
+        "name": "+1 Loot-Trader",
+        "comment": "There will be 1 player with the same armor type in your group who will trade you all items he MAY get as reward from the end of dungeon chest and thus this item IS NOT GUARANTEED. ",
+        "price": 3,
+        "default": false,
+        "id": "loottrade10x13",
+        "parents": [
+          "keyValue10"
+        ]
+      },
+      {
+        "name": "+2 Loot-Traders",
+        "comment": "There will be 2 players with the same armor type in your group who will trade you all items they may get as reward from the end of dungeon chest and thus the items ARE NOT GUARANTEED.",
+        "price": 6,
+        "default": false,
+        "id": "loottrade10x24",
+        "series": "test",
+        "parents": [
+          "keyValue10"
+        ]
+      },
+      {
+        "name": "+1 Loot-Trader",
+        "comment": "There will be 1 player with the same armor type in your group who will trade you all items he MAY get as reward from the end of dungeon chest and thus this item IS NOT GUARANTEED. ",
+        "price": 4,
+        "default": false,
+        "id": "loottrade11x15",
+        "parents": [
+          "keyValue11",
+          "keyValue12",
+          "keyValue13"
+        ]
+      },
+      {
+        "name": "+2 Loot-Traders",
+        "comment": "There will be 2 players with the same armor type in your group who will trade you all items they may get as reward from the end of dungeon chest and thus the items ARE NOT GUARANTEED.",
+        "price": 8,
+        "default": false,
+        "id": "loottrade11x26",
+        "series": "test",
+        "parents": [
+          "keyValue11",
+          "keyValue12",
+          "keyValue13"
+        ]
+      },
+      {
+        "name": "+1 Loot-Trader",
+        "comment": "There will be 1 player with the same armor type in your group who will trade you all items he MAY get as reward from the end of dungeon chest and thus this item IS NOT GUARANTEED. ",
+        "price": 5,
+        "default": false,
+        "id": "loottrade14x17",
+        "parents": [
+          "keyValue14",
+          "keyValue15"
+        ]
+      },
+      {
+        "name": "+2 Loot-Traders",
+        "comment": "There will be 2 players with the same armor type in your group who will trade you all items they may get as reward from the end of dungeon chest and thus the items ARE NOT GUARANTEED.",
+        "price": 10,
+        "default": false,
+        "series": "test",
+        "id": "loottrade14x28",
+        "parents": [
+          "keyValue14",
+          "keyValue15"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Range Slider Name",
+    "label": "Range Slider Label",
+    "id": "rangeSlider00",
+    "size": "is-half",
+    "type": "range",
+    "values": [
+      {
+        "name": "op1",
+        "comment": "Comment op1",
+        "price": 5,
+        "mark": true,
+        "default": true,
+        "id": "rangeSlider01",
+        "parents": [
+          "keyValue10",
+          "keyValue11",
+          "keyValue12",
+          "keyValue13",
+          "keyValue14",
+          "keyValue15"
+        ]
+      },
+      {
+        "name": "op2",
+        "comment": "Comment op2",
+        "price": 12,
+        "mark": true,
+        "default": false,
+        "id": "rangeSlider02",
+        "parents": [
+          "keyValue10",
+          "keyValue11",
+          "keyValue12",
+          "keyValue13",
+          "keyValue14",
+          "keyValue15"
+        ]
+      },
+      {
+        "name": "op3",
+        "comment": "Comment op3",
+        "price": 13,
+        "mark": false,
+        "default": false,
+        "id": "rangeSlider03",
+        "parents": [
+          "keyValue10",
+          "keyValue11",
+          "keyValue12",
+          "keyValue13",
+          "keyValue14",
+          "keyValue15"
+        ]
+      },
+      {
+        "name": "op4",
+        "comment": "Comment op4",
+        "price": 14,
+        "mark": true,
+        "default": false,
+        "id": "rangeSlider04",
+        "series": "rangeSlider04",
+        "parents": [
+          "keyValue10",
+          "keyValue11",
+          "keyValue12",
+          "keyValue13",
+          "keyValue14",
+          "keyValue15"
+        ]
+      },
+      {
+        "name": "op4a",
+        "comment": "Comment op4a",
+        "price": 14,
+        "mark": true,
+        "default": false,
+        "series": "rangeSlider04",
+        "id": "rangeSlider04-1",
+        "parents": [
+          "keyValue14"
+        ]
+      },
+      {
+        "name": "op5a",
+        "comment": "Comment op5a",
+        "price": 15,
+        "mark": true,
+        "default": false,
+        "series": "rangeSlider05",
+        "id": "rangeSlider05-1",
+        "parents": [
+          "keyValue14"
+        ]
+      },
+      {
+        "name": "op5b",
+        "comment": "Comment op5b",
+        "price": 0,
+        "mark": true,
+        "default": false,
+        "series": "rangeSlider05",
+        "id": "rangeSlider05-2",
+        "parents": [
+          "keyValue15"
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Title Slider Double",
+    "label": "Label Slider Double",
+    "id": "rangeSlider01",
+    "size": "is-full",
+    "comment": "Choose your run whether within timer or not",
+    "type": "range-double",
+    "values": [
+      {
+        "name": "op1",
+        "price": 1,
+        "mark": true,
+        "default": true,
+        "id": "rangeSlider11",
+        "parents": [
+          "keyValue10",
+          "keyValue11",
+          "keyValue12",
+          "keyValue13",
+          "keyValue14",
+          "keyValue15"
+        ]
+      },
+      {
+        "name": "op2",
+        "price": 1,
+        "mark": " ",
+        "default": false,
+        "id": "rangeSlider12",
+        "parents": [
+          "keyValue10",
+          "keyValue11",
+          "keyValue12",
+          "keyValue13",
+          "keyValue14",
+          "keyValue15"
+        ]
+      },
+      {
+        "name": "op3",
+        "price": 1,
+        "mark": false,
+        "default": false,
+        "id": "rangeSlider13",
+        "parents": [
+          "keyValue10",
+          "keyValue11",
+          "keyValue12",
+          "keyValue13",
+          "keyValue14",
+          "keyValue15"
+        ]
+      },
+      {
+        "name": "op4",
+        "price": 1,
+        "mark": true,
+        "default": true,
+        "id": "rangeSlider14",
+        "series": "rangeSlider04",
+        "parents": [
+          "keyValue10",
+          "keyValue11",
+          "keyValue12",
+          "keyValue13",
+          "keyValue14",
+          "keyValue15"
+        ]
+      },
+      {
+        "name": "op4a",
+        "price": 1,
+        "mark": true,
+        "default": false,
+        "series": "rangeSlider04",
+        "id": "rangeSlider14-1",
+        "parents": [
+          "keyValue14"
+        ]
+      },
+      {
+        "name": "op5a",
+        "price": 1,
+        "mark": true,
+        "default": false,
+        "series": "rangeSlider05",
+        "id": "rangeSlider15-1",
+        "parents": [
+          "keyValue14"
+        ]
+      },
+      {
+        "name": "op5b",
+        "price": 1,
+        "mark": true,
+        "default": false,
+        "series": "rangeSlider05",
+        "id": "rangeSlider15-2",
+        "parents": [
+          "keyValue15"
+        ]
+      }
+    ]
+  }
+]
+```
