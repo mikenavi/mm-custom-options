@@ -1341,3 +1341,40 @@ _В этом примере при переклчюении родительск
   }
 ]
 ```
+
+## Пример локализации
+
+```json
+[
+  {
+    "title": "Items group TITLE",
+    "label": "Items group LABEL",
+    "translations": {
+      "de": {
+        "label": "Items group LABEL DE"
+      }
+    },
+    "id": "items",
+    "size": "is-full",
+    "type": "checkbox",
+    "values": [
+      {
+        "name": "Hallen der Hingabe",
+        "label": "labelEN",
+        "itemLink": "<a href=\"https://ptr.wowhead.com/item=169223/ashjrakamas-shroud-of-resolve\" title=\"Ashjra'kamas, Shroud of Resolve\" target=\"_blank\" rel=\"noopener noreferrer\">Ashjra'kamas, Shroud of Resolve</a>",
+        "comment": "comment",
+        "price": -10.00,
+        "default": false,
+        "id": "items1",
+        "translations": {
+          "de": {
+            "label": "label DE",
+            "comment": "comment DE",
+            "itemLink": "<a href=\"https://de.wowhead.com/achievement=14194/hallen-der-hingabe\" target=\"_blank\" title=\"Halls of Devotion\" rel=\"noopener noreferrer\">Hallen der Hingabe</a>"
+          }
+        }
+      }
+    ]
+  }
+]
+```
