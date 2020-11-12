@@ -1,4 +1,7 @@
-### UPDATED 31/10/2020 - апдейты отмечены :octopus:
+### UPDATED 12/11/2020 - апдейты отмечены :octopus:
+- `richComment` для типов опций `checkbox` и `radio`
+
+### UPDATED 31/10/2020
 - Скрытие опции в корзине для клиента
 - Чёрный/белый списки для `parent`
 
@@ -25,7 +28,7 @@
 `title` - тип: строка
 - обязательный
 - название опции, сохраняется в ордере для администраторов и клиентов
-- :octopus: если `title` опции начинается с символа `_`, то данная опция и ее значение не будет отображены в корзине и ордере для клиента клиента, но будет передана в ордер администраторам
+- если `title` опции начинается с символа `_`, то данная опция и ее значение не будет отображены в корзине и ордере для клиента клиента, но будет передана в ордер администраторам
 
 `label` - тип: строка
 - если заполнено, замещает собой поле `title` для клиента (на фронте магазина)
@@ -111,7 +114,7 @@
 - Если элементов является ID, то значение доступно для выбора, если данный ID отмечен выбранным.
 - Если элементом является массив, то значение доступно для выбора, если все ID массива отмечены выбранными.
 
-`parentsMode` :octopus: - тип: строка
+`parentsMode` - тип: строка
 - возможные значения: `whitelist`, `blacklist`
 - по умолчанию: `whitelist`
 - `blacklist` - в режие blacklist делает опцию невидимой для всех значений в ключе `parents`
@@ -135,6 +138,12 @@
 - _пример_ `<a href=\"https://de.wowhead.com/achievement=14194/hallen-der-hingabe\" target=\"_blank\" title=\"Halls of Devotion\" rel=\"noopener noreferrer\">Hallen der Hingabe</a>`
 - не забывать экранировать кавычки `"` => `\"`,
 
+:octopus: `richComment` - тип: строка
+- экранированный html, 
+- может содержать ссылку
+- рендерится строчно, после обычного комментария
+- не совместим с режимом `image`
+
 ## `button`
 Содержит одно или несколько значений ключа `values`, множественный выбор значения в группе.
 
@@ -146,6 +155,12 @@
 
 `image` - тип: строка
 - url картинки, которая замещает собой элемент
+
+:octopus: `richComment` - тип: строка
+- экранированный html, 
+- может содержать ссылку
+- рендерится строчно, после обычного комментария
+- не совместим с режимом `image`
 
 ## `select`
 Содержит одно или несколько значений ключа `values`, выбор одного значения в группе.
@@ -343,6 +358,7 @@ _В этом примере при переклчюении родительск
         "name": "Hallen der Hingabe",
         "itemLink": "<a href=\"https://de.wowhead.com/achievement=14194/hallen-der-hingabe\" target=\"_blank\" title=\"Halls of Devotion\" rel=\"noopener noreferrer\">Hallen der Hingabe</a>",
         "comment": "comment",
+        "richComment": "<a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>",
         "price": 10.00,
         "default": false,
         "id": "items1"
@@ -888,6 +904,7 @@ _В этом примере при переклчюении родительск
         "price": 0,
         "default": false,
         "id": "timerOptionYes1",
+        "richComment": "<a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>",
         "series": "timerOptionYes",
         "parents": [
           "keyValue10",
