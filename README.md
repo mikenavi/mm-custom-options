@@ -1,4 +1,4 @@
-### UPDATED 09/12/2020 - апдейты отмечены :octopus:
+### UPDATED 09/12/2020 :octopus:
 - тип опции 'hp-event'
 
 ### UPDATED 12/11/2020
