@@ -1,5 +1,5 @@
 ### UPDATED 09/12/2020 :octopus:
-- тип опции 'hp-event'
+- тип опции `hp-event`
 
 ### UPDATED 12/11/2020
 - `richComment` для типов опций `checkbox` и `radio`
@@ -199,6 +199,42 @@
 - ID товара на платформе
 
 **Цену эвента лучше задавать через парента (можно скрытого), эту механику не успел ещё обкатать**
+
+```json
+{
+  "title": "Slot reserve",
+  "id": "slot",
+  "size": "is-full",
+  "type": "hp-event",
+  "values": [
+    {
+      "hpId": "393c28fd77754d3bb59de3d2a9a4606f",
+      "id": "slot-reserve1",
+      "parents": [
+        "keyValue103"
+      ]
+    },
+    {
+      "hpId": "03847083cb24423fa7fbc2940814e973",
+      "id": "slot-reserve2",
+      "parents": [
+        [
+          "keyValue114",
+          "playMethodValueAcc",
+          "loot-option-x3"
+        ]
+      ]
+    },
+    {
+      "hpId": "e40326add71d4defb5ac9974cc3f8af7",
+      "id": "slot-reserv32",
+      "parents": [
+        "keyValue125"
+      ]
+    }
+  ]
+}
+```
 
 ## Parents и Series
 
