@@ -198,42 +198,64 @@
 `hpId` - тип: строка
 - ID товара на платформе
 
+`faction` - тип: строка
+- принимает значения `horde` и `alliance`
+- фильтрует эвенты по признаку фракции
+- *переключатель фракций реалзован в примере ниже*
+
 **:exclamation: Внимание, не может быть носителем собсвенной "цены", цену опции эвента можено задавать через парента (можно скрытого). Данная механика находится в процессе реализации**
 
 ```json
-{
-  "title": "Slot reserve",
-  "id": "slot",
-  "size": "is-full",
-  "type": "hp-event",
-  "values": [
-    {
-      "hpId": "393c28fd77754d3bb59de3d2a9a4606f",
-      "id": "slot-reserve1",
-      "parents": [
-        "keyValue103"
-      ]
-    },
-    {
-      "hpId": "03847083cb24423fa7fbc2940814e973",
-      "id": "slot-reserve2",
-      "parents": [
-        [
-          "keyValue114",
-          "playMethodValueAcc",
-          "loot-option-x3"
+  {
+    "title": "Slot reserve",
+    "id": "slot",
+    "size": "is-full",
+    "type": "hp-event",
+    "required": true,
+    "values": [
+     {
+        "hpId": "f9b084fb659744f584b4b770651fbe99",
+        "id": "slot-reserve0-a",
+        "faction": "alliance",
+        "parents": [
+          ["keyValue103", "playMethodValueSelf"]
         ]
-      ]
-    },
-    {
-      "hpId": "e40326add71d4defb5ac9974cc3f8af7",
-      "id": "slot-reserv32",
-      "parents": [
-        "keyValue125"
-      ]
-    }
-  ]
-}
+      },
+     {
+        "hpId": "f9b084fb659744f584b4b770651fbe99",
+        "id": "slot-reserve0-h",
+        "faction": "horde",
+        "parents": [
+          ["keyValue103", "playMethodValueAcc"]
+        ]
+      },
+      {
+        "hpId": "393c28fd77754d3bb59de3d2a9a4606f",
+        "id": "slot-reserve1",
+        "parents": [
+          "keyValue136"
+        ]
+      },
+      {
+        "hpId": "03847083cb24423fa7fbc2940814e973",
+        "id": "slot-reserve2",
+        "parents": [
+          [
+            "keyValue114",
+            "playMethodValueAcc",
+            "loot-option-x3"
+          ]
+        ]
+      },
+      {
+        "hpId": "e40326add71d4defb5ac9974cc3f8af7",
+        "id": "slot-reserv32",
+        "parents": [
+          "keyValue125"
+        ]
+      }
+    ]
+  }
 ```
 
 ## Parents и Series
