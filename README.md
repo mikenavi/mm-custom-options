@@ -1475,6 +1475,7 @@ wip
   "operationType": "multiply" | *"add",
   "affectOptions": false | *true | ['optID1', 'optID2'],
   "affectBasePrice": false | *true,
-  "affectQuantity": false | *true
+  "affectQuantity": false | *true,
+  "viewMode": "numeral" | *"percent"
 }
 ```
