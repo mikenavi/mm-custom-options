@@ -1474,13 +1474,13 @@ _В этом примере при переклчюении родительск
 ]
 ```
 ---
-wip
-```json
+
+```
 "priceRule": {
-  "operationType": "multiply" | *"add",
-  "affectOptions": false | *true | ['optID1', 'optID2'],
-  "affectBasePrice": false | *true,
-  "affectQuantity": false | *true,
-  "viewMode": "number" | *"percent"
+  "method": *"add" | "multiply", - метод калькуляции
+  "affectOptions": *true | false | ['optID1', 'optID2'], - влияние на опции (для мультипликатора)
+  "affectBasePrice": *true | false, - влияет ли на базовую цену (для мультипликатора)
+  "affectQuantity": *true | false, - влияет ли на количество (для сложения)
+  "viewMode": *"percent" | "number" - режим отображения цены (для мультипликатора)
 }
 ```
