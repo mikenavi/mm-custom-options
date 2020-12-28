@@ -1,7 +1,11 @@
-### UPDATED 09/12/2020 :octopus:
+### UPDATED 29/12/2020 :octopus: - dev.env
+- новый параметр занчения `passToHpOrder`
+- возможность использовать множители
+
+### UPDATED 09/12/2020
 - тип опции `hp-event`
 
-### UPDATED 12/11/2020
+### UPDATED 12/11/2020 - prod.env
 - `richComment` для типов опций `checkbox` и `radio`
 
 ### UPDATED 31/10/2020
@@ -78,6 +82,45 @@
 - объект перевода, ключами объекта являются языковые локали магазина `de`, `fr`...
 - каждый ключ является в свою очередь объектом, который замещает собой любые вышеописанные ключи кроме `id`, `title` и `values`
 
+`priceRule` - тип: объект :octopus:
+- содержит правила расчёта цены для всех значений данной опции. По сути `value` наследуют это значение и при необходимости может быть переназначено на уровне`value`.
+
+### Ключи `priceRule` :octopus:
+
+`method` - тип: строка
+- по умолчанию `add`
+- значения `add` | `multiply`
+- метод калькуляции, умножение или сложение
+- при умножении можно использовать значения меньше 1, пример: множитель 0.5 даст -50%, в то время как множитель 1.5 - даст +50% к стоимости
+- при сложении можно использовать отрицательыне значения
+
+`affectOptions` - тип: булевый или массив
+- по умолчанию `true`
+- только для метода `multiply`
+- при `false` не применяется к опция
+- при `true` не применяется ко всем опциям без исключения
+- при массиве только к опциям перечисленным в нём **`["idOption1", "idOption2", ...]`**
+- в массиве используются ID опций, а НЕ значений
+
+`affectBasePrice` - тип: булевый
+- по умолчанию `true`
+- только для метода `multiply`
+- влияеит ли мультипликатор на базовую цену товара
+
+`affectQuantity` - тип: булевый
+- по умолчанию `true`
+- только для метода `add`
+- влияеит ли на количество товара
+
+`viewMode` - тип: строка
+- по умолчанию `percent`
+- значения `percent` | `number`
+- режим отображения цены для опций-мультипликаторов
+- при `percent` отображает добавочную цену в процентах
+- при `number` отображает вклад данной опции в конечную цену продукта
+
+**Пример конфика в ценами**
+
 ### Общие значения опций
 
 `id` - тип: строка
@@ -124,6 +167,13 @@
 
 `series` - тип: строка
 - идентификатор группы родственных значений **внутри** группы. Служит для фиксации значения выбора пользователя при переключении родительских элементов.
+
+`passToHpOrder` - тип: булевый
+- дефолтное значение `true`
+- отвечат за то, будет ли значение передано в ордер на плтформе
+
+`priceRule` - тип: объект :octopus:
+- содержит правила расчёта цены для текущего значения опции, имеет более высокий приоритет перед правилами назначенными на уровне `option`.
 
 ### Опции и специальные ключи значений:
 
@@ -1475,14 +1525,177 @@ _В этом примере при переклчюении родительск
 ```
 ---
 
-```
-Может быть назначен как на опцию так и на значение.
+## Пример конфига с ценовыми правилами
 
-"priceRule": {
-  "method": *"add" | "multiply", - метод калькуляции
-  "affectOptions": *true | false | ['optID1', 'optID2'], - влияние на опции (для мультипликатора), при массиве - ID Опций
-  "affectBasePrice": *true | false, - влияет ли на базовую цену (для мультипликатора)
-  "affectQuantity": *true | false, - влияет ли на количество (для сложения)
-  "viewMode": *"percent" | "number" - режим отображения цены (для мультипликатора)
-}
+```json
+[
+  {
+    "title": "opt1",
+    "id": "opt1",
+    "comment": "No config",
+    "type": "checkbox",
+    "values": [
+      {
+        "name": "0",
+        "id": "opt1-0"
+      },
+      {
+        "name": "+3",
+        "price": 3,
+        "id": "opt1-1"
+      },
+      {
+        "name": "+5",
+        "price": 5,
+        "id": "opt1-2"
+      }
+    ]
+  },
+  {
+    "title": "opt2",
+    "comment": "add, affectQuantity-",
+    "id": "opt2",
+    "type": "checkbox",
+    "priceRule": {
+      "affectQuantity": false
+    },
+    "values": [
+      {
+        "name": "0.5",
+        "price": 0.5,
+        "id": "opt2-0"
+      },
+      {
+        "name": "3",
+        "price": 3,
+        "id": "opt2-1"
+      },
+      {
+        "name": "5",
+        "price": 5,
+        "id": "opt2-2"
+      }
+    ]
+  },
+  {
+    "title": "opt3",
+    "id": "opt3",
+    "comment": "multi, affectBasePrice+, affectQuantity+, all-options+",
+    "type": "checkbox",
+    "priceRule": {
+      "method": "multiply",
+      "viewMode": "number"
+    },
+    "values": [
+      {
+        "name": "0.5",
+        "price": 0.5,
+        "id": "opt3-0"
+      },
+      {
+        "name": "3",
+        "price": 3,
+        "comment": "rewritten viewMode",
+        "id": "opt3-1",
+        "priceRule": {
+          "viewMode": "percent"
+        }
+      },
+      {
+        "name": "5",
+        "comment": "rewritten calcType",
+        "price": 5,
+        "id": "opt3-2",
+        "priceRule": {
+          "method": "add"
+        }
+      }
+    ]
+  },
+  {
+    "title": "opt4",
+    "comment": "multi, affectBasePrice+, affectQuantity+, opt1+",
+    "id": "opt4",
+    "type": "checkbox",
+    "priceRule": {
+      "method": "multiply",
+      "affectOptions": ["opt1"]
+    },
+    "values": [
+      {
+        "name": "0.5",
+        "price": 0.5,
+        "id": "opt4-0"
+      },
+      {
+        "name": "3",
+        "price": 3,
+        "id": "opt4-1"
+      },
+      {
+        "name": "5",
+        "price": 5,
+        "id": "opt4-2"
+      }
+    ]
+  },
+  {
+    "title": "opt5",
+    "id": "opt5",
+    "comment": "multi, affectBasePrice-, affectQuantity-, opt2+",
+    "type": "checkbox",
+    "priceRule": {
+      "method": "multiply",
+      "affectOptions": ["opt2"],
+      "affectBasePrice": false,
+      "affectQuantity": false
+    },
+    "values": [
+      {
+        "name": "0.5",
+        "price": 0.5,
+        "id": "opt5-0"
+      },
+      {
+        "name": "3",
+        "price": 3,
+        "id": "opt5-1"
+      },
+      {
+        "name": "5",
+        "price": 5,
+        "id": "opt5-2"
+      }
+    ]
+  },
+    {
+    "title": "opt6",
+    "comment": "multi, affectBasePrice-, affectQuantity-, allOpt+",
+    "id": "opt6",
+    "type": "checkbox",
+    "priceRule": {
+      "method": "multiply",
+      "affectBasePrice": false,
+      "affectQuantity": false,
+      "viewMode": "number"
+    },
+    "values": [
+      {
+        "name": "0.5",
+        "price": 0.5,
+        "id": "opt6-0"
+      },
+      {
+        "name": "3",
+        "price": 3,
+        "id": "opt6-1"
+      },
+      {
+        "name": "5",
+        "price": 5,
+        "id": "opt6-2"
+      }
+    ]
+  }
+]
 ```
