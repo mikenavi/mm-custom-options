@@ -1,11 +1,11 @@
-### UPDATED 29/12/2020 :octopus: - dev.env
+### UPDATED 29/12/2020 :octopus: - dev.env | prod.env
 - новый параметр занчения `passToHpOrder`
 - возможность использовать множители и другие правила ценообразования
 
 ### UPDATED 09/12/2020
 - тип опции `hp-event`
 
-### UPDATED 12/11/2020 - prod.env
+### UPDATED 12/11/2020
 - `richComment` для типов опций `checkbox` и `radio`
 
 ### UPDATED 31/10/2020
