@@ -1628,12 +1628,12 @@ _В этом примере при переклчюении родительск
     "type": "checkbox",
     "priceRule": {
       "method": "multiply",
-      "affectOptions": ["opt1"]
+      "affectOptions": ["opt1", "opt1-1"]
     },
     "values": [
       {
-        "name": "0.5",
-        "price": 0.5,
+        "name": "0",
+        "price": 0,
         "id": "opt4-0"
       },
       {
@@ -1703,6 +1703,62 @@ _В этом примере при переклчюении родительск
         "name": "5",
         "price": 5,
         "id": "opt6-2"
+      }
+    ]
+  },
+      {
+    "title": "opt6",
+    "comment": "multi, affectBasePrice-, affectQuantity-, allOpt+",
+    "id": "opt7",
+    "type": "checkbox",
+    "priceRule": {
+      "method": "multiply",
+      "affectBasePrice": false,
+      "affectQuantity": false,
+      "viewMode": "number"
+    },
+    "values": [
+      {
+        "name": "0.5",
+        "price": 0.5,
+        "id": "opt7-0"
+      },
+      {
+        "name": "3",
+        "price": 3,
+        "id": "opt7-1"
+      },
+      {
+        "name": "5",
+        "price": 5,
+        "id": "opt7-2"
+      }
+    ]
+  },
+    {
+    "title": "opt8",
+    "id": "opt8",
+    "comment": "multi, affectBasePrice-, affectQuantity-, opt2+",
+    "type": "checkbox",
+    "priceRule": {
+      "method": "add",
+      "affectOptions": ["opt2"]
+    },
+    "values": [
+      {
+        "name": "0.5",
+        "price": 0.5,
+        "id": "opt8-0"
+      },
+      {
+        "name": "3",
+        "price": 3,
+        "id": "opt8-1"
+      },
+      {
+        "name": "5",
+        "price": 5,
+        "id": "opt8-2"
       }
     ]
   }
