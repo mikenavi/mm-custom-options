@@ -1,23 +1,40 @@
-### UPDATED 31/01/2021 :octopus: - dev.env | prod.env
+### v1.2.0 UPDATED 07/04/2021 :octopus:
+
+- новые типы опций `radio-rich`, `checkbox-rich`
+- ключ опции `cssClass`
+
+### UPDATED 31/01/2021
+
 - возможность прмиенять метод калькуляции `add` к конкретной опции, а не только глобально
 
 ### UPDATED 29/12/2020
+
 - новый параметр занчения `passToHpOrder`
 - возможность использовать множители и другие правила ценообразования
 
 ### UPDATED 09/12/2020
+
 - тип опции `hp-event`
 
 ### UPDATED 12/11/2020
+
 - `richComment` для типов опций `checkbox` и `radio`
 
 ### UPDATED 31/10/2020
+
 - Скрытие опции в корзине для клиента
 - Чёрный/белый списки для `parent`
 
 ---
 
+# Product Options Plugin
+
+Добавляет фронтенд часть опций в товары и корзину.
+
+---
+
 # Объект конфига
+
 Конфиг опций представляет из себя массив объектов JSON
 
 ```
@@ -29,68 +46,88 @@
 ```
 
 ## Опция
+
 Ключи объекта опции:
 
 `id` - тип: строка
+
 - обязательный
 - идентификатор опции, должен быть уникальным
 
 `title` - тип: строка
+
 - обязательный
 - название опции, сохраняется в ордере для администраторов и клиентов
 - если `title` опции начинается с символа `_`, то данная опция и ее значение не будет отображены в корзине и ордере для клиента клиента, но будет передана в ордер администраторам
 
 `label` - тип: строка
+
 - если заполнено, замещает собой поле `title` для клиента (на фронте магазина)
 
 `comment` - тип: строка
+
 - комментарий к опции, отображение зависит от типа опции
 
 `type` - тип: строка
+
 - обязательный
 - возможные значения: `checkbox`, `radio`, `switch`, `text-input`, `button`, `range`, `range-double`, `hidden`, `select-custom`, `select`, `select-key` (устаревший), `select-raid` (устаревший)
 
 `values` - тип: массив, обязательный
+
 - Массив значений опций, будут описаны отдельно в контексте типов
 - Сама опция видима и доступна для выбора если есть хотя бы одно значение в группе values (исключение типы `hidden` и `text-input`).
 
 `size` - тип: строка
+
 - возможные значения: `is-full`, `is-half`, `is-third`
 - по умолчанию `is-half`
 - определяет вёрстку элемента в десктопной версии, какое пространство по ширине он занимает, половину блока или целый блок, в мобильной версии игнорируется
 
 `required` - тип: булевый
+
 - по умолчанию `false`
 - определяет является ли опция обязательной для заполнения
 
 `invalidMessage` - тип: строка
+
 - по умолчанию `This option is required`
 - Сообщение при ошибке валидации опции
 
 `minLimit` - тип: числовой
+
 - работает для типов: checkbox
 - комбириуется c `required`
 - определяет минимальное требуемое количество заполненных значений (values) опции
 
 `maxLimit` - тип: числовой
+
 - работает для типов: checkbox
 - комбириуется c `required`
 - определяет максимально возможное количество заполненных значений (values) опции
 
 `quick` - тип: массив
+
 - только для типов `select-custom`, `select-key`, `select-dungeon`
 - содержит ID "быстрых опций", которые отрисовываются рядом с элементом списка
 
 `translations` - тип: объект
+
 - объект перевода, ключами объекта являются языковые локали магазина `de`, `fr`...
 - каждый ключ является в свою очередь объектом, который замещает собой любые вышеописанные ключи кроме `id`, `title` и `values`
 
+`cssClass` - тип: строка :octopus:
+
+- добавляет CSS-класс к блоку опции, может быть использован для дополнительной стилизации, например формирование дополнительны отступов - `'my-4'` и т.д.
+
 `priceRule` - тип: объект
+
 - содержит правила расчёта цены для всех значений данной опции. По сути `value` наследуют это значение и при необходимости может быть переназначено на уровне`value`.
 
 ### Ключи `priceRule`
 
 `method` - тип: строка
+
 - по умолчанию `add`
 - значения `add` | `multiply`
 - метод калькуляции, умножение или сложение
@@ -98,22 +135,26 @@
 - при сложении можно использовать отрицательные значения
 
 `affectOptions` - тип: булевый или массив :octopus:
+
 - по умолчанию `true`
 - при `false` не применяется к опциям
 - при `true` применяется ко всем опциям без исключения
 - при массиве - массив ID опций или значений опций в любой комбинации. При указании и ID опции и ID ее значения мультипликатор сработает для этой опции только один раз
 
 `affectBasePrice` - тип: булевый
+
 - по умолчанию `true`
 - только для метода `multiply`
 - влияеит ли мультипликатор на базовую цену товара
 
 `affectQuantity` - тип: булевый
+
 - по умолчанию `true`
 - только для метода `add`
 - влияеит ли на количество товара
 
 `viewMode` - тип: строка
+
 - по умолчанию `percent`
 - значения `percent` | `number`
 - только для метода `multiply`
@@ -126,201 +167,275 @@
 ### Общие значения опций
 
 `id` - тип: строка
+
 - обязательный
 - идентификатор опции, должен быть уникальным
 
 `name` - тип: строка
+
 - обязательный
 - название значения опции, сохраняется в ордере для администраторов и клиентов
 
 `label` - тип: строка
+
 - если заполнено, замещает собой поле `name` для клиента (на фронте магазина)
 
 `translations` - тип: объект
+
 - объект перевода, ключами объекта являются языковые локали магазина `de`, `fr`...
 - каждый ключ является в свою очередь объектом, который замещает собой любые поля кроме `id`, `price`, `name`
 
 `default` - тип: булевый
+
 - по умолчанию `false`
 - определяет начальное положение опции **при загрузке страницы**
 - может быть автоматически переопределно при переключении родительских опций
 
 `price` - тип: числовой
+
 - цена опции в базовой валюте магазина
 - может быть отрицательной
 - если равна 0, то не отображается на фронте
 
 `priceLabel` - тип: числовой, строка
+
 - замещает собой цену
 - может использоваться для скрытия реальной стоимости опций при установке значения `0`
 
 `disabled` - тип: булевый
+
 - значение заблокировано для выбора, но доступно для просмотра
 
 `parents` - тип: массив
+
 - включает ID и/или массивы ID родительских элементов (именно значений опций) для данного значения из **других опций**.
 - Если элементов является ID, то значение доступно для выбора, если данный ID отмечен выбранным.
 - Если элементом является массив, то значение доступно для выбора, если все ID массива отмечены выбранными.
 
 `parentsMode` - тип: строка
+
 - возможные значения: `whitelist`, `blacklist`
 - по умолчанию: `whitelist`
 - `blacklist` - в режие blacklist делает опцию невидимой для всех значений в ключе `parents`
 
 `series` - тип: строка
+
 - идентификатор группы родственных значений **внутри** группы. Служит для фиксации значения выбора пользователя при переключении родительских элементов.
 
 `passToHpOrder` - тип: булевый
+
 - дефолтное значение `true`
 - отвечат за то, будет ли значение передано в ордер на плтформе
 
 `priceRule` - тип: объект
+
 - содержит правила расчёта цены для текущего значения опции, имеет более высокий приоритет перед правилами назначенными на уровне `option`.
 
 ### Опции и специальные ключи значений:
 
 ## `checkbox`
+
 Содержит одно или несколько значений ключа `values`, множественный выбор значения в группе.
 
 `image` - тип: строка
+
 - url картинки, которая замещает собой элемент
 
 `enabled` - тип: булевый
+
 - фиксирует опцию как отмеченную, не прибавляет цену
 
 `itemLink` - тип: строка
+
 - принимает HTML, не совсемтим с режиомом `image`
 - _пример_ `<a href=\"https://de.wowhead.com/achievement=14194/hallen-der-hingabe\" target=\"_blank\" title=\"Halls of Devotion\" rel=\"noopener noreferrer\">Hallen der Hingabe</a>`
 - не забывать экранировать кавычки `"` => `\"`
-- ссылки внутри этого элемента НЕ кликабельны, служат для генреции тултипов по наведению на них. 
+- ссылки внутри этого элемента НЕ кликабельны, служат для генреции тултипов по наведению на них.
 - при нажатии на элемент происходит отметка опции
 
 `richComment` - тип: строка
-- экранированный html, 
+
+- экранированный html,
 - может содержать ссылку
 - рендерится строчно, после обычного комментария
 - не совместим с режимом `image`
 
-## `button`
-Содержит одно или несколько значений ключа `values`, множественный выбор значения в группе.
+## `checkbox-rich` :octopus:
 
-## `switch`
 Содержит одно или несколько значений ключа `values`, выбор одного значения в группе.
-
-## `radio`
-Содержит одно или несколько значений ключа `values`, выбор одного значения в группе.
+По сути аналогичен элементу `checkbox`, но имеет другой внешний вид и ряд дополнительных ключей:
 
 `image` - тип: строка
+
 - url картинки, которая замещает собой элемент
 
 `richComment` - тип: строка
-- экранированный html, 
+
+- экранированный html,
+- может содержать ссылку
+
+`imagePosition` - тип: строка
+
+- позиция картинки в плашке опции
+- возможные значения: `left`, `right`
+- по умолчанию `left`
+
+`priceGhost` - тип: число
+
+- добавочная "зачёркнутая" цена товара
+- работает так же как аналогичная цена у продукта, указывается разница цены "до/после" для возможности калькуляции валют/множителей и проч. _Пример: если зачёркнутая цена должна быть 15, а цена со скидкой - 10, то в этом ключе указывается цифра 5, сами цены будут скалькулированы._
+
+## `button`
+
+Содержит одно или несколько значений ключа `values`, множественный выбор значения в группе.
+
+## `switch`
+
+Содержит одно или несколько значений ключа `values`, выбор одного значения в группе.
+
+## `radio`
+
+Содержит одно или несколько значений ключа `values`, выбор одного значения в группе.
+
+`image` - тип: строка
+
+- url картинки, которая замещает собой элемент
+
+`richComment` - тип: строка
+
+- экранированный html,
 - может содержать ссылку
 - рендерится строчно, после обычного комментария
 - не совместим с режимом `image`
 
+## `radio-rich` :octopus:
+
+Содержит одно или несколько значений ключа `values`, выбор одного значения в группе.
+По сути аналогичен элементу `radio`, но имеет другой внешний вид и ряд дополнительных ключей:
+
+`image` - тип: строка
+
+- url картинки, которая замещает собой элемент
+
+`richComment` - тип: строка
+
+- экранированный html,
+- может содержать ссылку
+
+`imagePosition` - тип: строка
+
+- позиция картинки в плашке опции
+- возможные значения: `left`, `right`
+- по умолчанию `left`
+
+`priceGhost` - тип: число
+
+- добавочная "зачёркнутая" цена товара
+- работает так же как аналогичная цена у продукта, указывается разница цены "до/после" для возможности калькуляции валют/множителей и проч. _Пример: если зачёркнутая цена должна быть 15, а цена со скидкой - 10, то в этом ключе указывается цифра 5, сами цены будут скалькулированы._
+
 ## `select`
+
 Содержит одно или несколько значений ключа `values`, выбор одного значения в группе.
 
 ## `select-custom`
+
 Содержит одно или несколько значений ключа `values`, выбор одного значения в группе.
 
 `image` - тип: строка
+
 - url картинки, которая прикрепляется к элементу
 
 ## `range` и `range-double`
+
 `mark` - тип: булевый или строка
+
 - по умолчанию `false`
 - отображается ли значение на шкале рендж-слайдера
 - при строчном режиме замещает собой значение на шкале
 
 `image` - тип: строка
+
 - url картинки, которая замещает собой ползунок на соотвествующем значении
 
 ## `hidden`
+
 - может применяться для передачи комментария по продукту в ордер или модификации цены
 
 ## `text-input`
+
 - для передачи информации со свободным вводом
 
 ## `hp-event`
+
 Содержит одно или несколько значений ключа `values`, единичный выбор значения в группе. Может являться парентом, а также иметь парентов. Может иметь собственный ценовой модификатор как обычная опция, а также быть или не быть `required`. Механика опции в целом аналогична `radio`.
 
 `hpId` - тип: строка
+
 - ID товара на платформе
 
 `faction` - тип: строка
+
 - принимает значения `horde` и `alliance`
 - фильтрует эвенты по признаку фракции
-- *переключатель фракций реалзован в примере ниже*
+- _переключатель фракций реалзован в примере ниже_
 
 `hideFaction` - тип: булевый
+
 - по умолчанию `false`
 - скрывает значение фракции эвента на плашках
 
 `reserveDelay` - тип: число
+
 - по умолчанию `0`
 - едицицы измерения - минуты
 - определяет отсрочку, за которую эвент становится недоступным для добавления в корзину
 
 `disabled` - тип: булевый
+
 - по умолчанию `false`
 - блокировка выбора даты и эвента
 
 `disabledMessage` - тип: строка
+
 - комментарий причины блокировки выбора эвента/слота
 
 ```json
-  {
-    "title": "Slot reserve",
-    "id": "slot",
-    "size": "is-full",
-    "type": "hp-event",
-    "required": true,
-    "values": [
-     {
-        "hpId": "f9b084fb659744f584b4b770651fbe99",
-        "id": "slot-reserve0-a",
-        "faction": "alliance",
-        "parents": [
-          ["keyValue103", "playMethodValueSelf"]
-        ]
-      },
-     {
-        "hpId": "f9b084fb659744f584b4b770651fbe99",
-        "id": "slot-reserve0-h",
-        "faction": "horde",
-        "parents": [
-          ["keyValue103", "playMethodValueAcc"]
-        ]
-      },
-      {
-        "hpId": "393c28fd77754d3bb59de3d2a9a4606f",
-        "id": "slot-reserve1",
-        "parents": [
-          "keyValue136"
-        ]
-      },
-      {
-        "hpId": "03847083cb24423fa7fbc2940814e973",
-        "id": "slot-reserve2",
-        "parents": [
-          [
-            "keyValue114",
-            "playMethodValueAcc",
-            "loot-option-x3"
-          ]
-        ]
-      },
-      {
-        "hpId": "e40326add71d4defb5ac9974cc3f8af7",
-        "id": "slot-reserv32",
-        "parents": [
-          "keyValue125"
-        ]
-      }
-    ]
-  }
+{
+  "title": "Slot reserve",
+  "id": "slot",
+  "size": "is-full",
+  "type": "hp-event",
+  "required": true,
+  "values": [
+    {
+      "hpId": "f9b084fb659744f584b4b770651fbe99",
+      "id": "slot-reserve0-a",
+      "faction": "alliance",
+      "parents": [["keyValue103", "playMethodValueSelf"]]
+    },
+    {
+      "hpId": "f9b084fb659744f584b4b770651fbe99",
+      "id": "slot-reserve0-h",
+      "faction": "horde",
+      "parents": [["keyValue103", "playMethodValueAcc"]]
+    },
+    {
+      "hpId": "393c28fd77754d3bb59de3d2a9a4606f",
+      "id": "slot-reserve1",
+      "parents": ["keyValue136"]
+    },
+    {
+      "hpId": "03847083cb24423fa7fbc2940814e973",
+      "id": "slot-reserve2",
+      "parents": [["keyValue114", "playMethodValueAcc", "loot-option-x3"]]
+    },
+    {
+      "hpId": "e40326add71d4defb5ac9974cc3f8af7",
+      "id": "slot-reserv32",
+      "parents": ["keyValue125"]
+    }
+  ]
+}
 ```
 
 ## Parents и Series
@@ -394,37 +509,28 @@ _В этом примере при переклчюении родительск
         "default": true,
         "id": "timerOptionYes1",
         "series": "timerOptionYes",
-        "parents": [
-          "keyValue10"
-        ]
+        "parents": ["keyValue10"]
       },
       {
         "name": "Within Timer",
         "price": 12,
         "id": "timerOptionYes2",
         "series": "timerOptionYes",
-        "parents": [
-          "keyValue11"
-        ]
+        "parents": ["keyValue11"]
       },
       {
         "name": "Within Timer",
         "price": 15,
         "id": "timerOptionYes3",
         "series": "timerOptionYes",
-        "parents": [
-          "keyValue12"
-        ]
+        "parents": ["keyValue12"]
       },
       {
         "name": "Some option",
         "price": 5,
         "default": false,
         "id": "someId1",
-        "parents": [
-          "keyValue11",
-          "keyValue12"
-        ]
+        "parents": ["keyValue11", "keyValue12"]
       },
       {
         "name": "Some another option",
@@ -445,14 +551,11 @@ _В этом примере при переклчюении родительск
         "default": true,
         "id": "someId3",
         "series": "timerOptionYes",
-        "parents": [
-          ["keyValue11", "someId1"]
-        ]
+        "parents": [["keyValue11", "someId1"]]
       }
     ]
   }
 ]
-
 ```
 
 ## Комментирование
@@ -473,9 +576,7 @@ _В этом примере при переклчюении родительск
       "default": true,
       "id": "someId3",
       "series": "timerOptionYes",
-      "parents": [
-        ["keyValue11", "someId1"]
-      ]
+      "parents": [["keyValue11", "someId1"]]
     }
   ]
 }
@@ -496,7 +597,7 @@ _В этом примере при переклчюении родительск
         "itemLink": "<a href=\"https://de.wowhead.com/achievement=14194/hallen-der-hingabe\" target=\"_blank\" title=\"Halls of Devotion\" rel=\"noopener noreferrer\">Hallen der Hingabe</a>",
         "comment": "comment",
         "richComment": "<a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>",
-        "price": 10.00,
+        "price": 10.0,
         "default": false,
         "id": "items1"
       },
@@ -504,7 +605,7 @@ _В этом примере при переклчюении родительск
         "name": "Verschlüsselte Schrift aus Ny'alotha",
         "itemLink": "<a href=\"https://ptr.wowhead.com/item=169223/ashjrakamas-shroud-of-resolve\" title=\"Ashjra'kamas, Shroud of Resolve\" target=\"_blank\" rel=\"noopener noreferrer\">Ashjra'kamas, Shroud of Resolve</a>",
         "comment": "comment",
-        "price": 20.00,
+        "price": 20.0,
         "default": false,
         "id": "items2",
         "parents": ["simple-select8"]
@@ -632,7 +733,7 @@ _В этом примере при переклчюении родительск
         "price": 5,
         "default": false,
         "id": "playMethodValueAccasd",
-        "image": "https://static-shpf.mageworx.com/img/uploads/productoptions/3212/b7eddc21b66a8e47ffdbd714453f69b4.png"
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
       },
       {
         "name": "Selfplay",
@@ -640,7 +741,7 @@ _В этом примере при переклчюении родительск
         "price": 0,
         "default": false,
         "id": "playMethodValueSelf0asd",
-        "image": "https://static-shpf.mageworx.com/img/uploads/productoptions/3212/b7eddc21b66a8e47ffdbd714453f69b4.png"
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
       },
       {
         "name": "Selfplay",
@@ -649,7 +750,7 @@ _В этом примере при переклчюении родительск
         "disabled": true,
         "default": false,
         "id": "playMethodValueSelf0asd00",
-        "image": "https://static-shpf.mageworx.com/img/uploads/productoptions/3212/b7eddc21b66a8e47ffdbd714453f69b4.png"
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
       }
     ]
   },
@@ -670,7 +771,7 @@ _В этом примере при переклчюении родительск
         "price": 0,
         "default": false,
         "id": "timerOptionYes1zxc",
-        "image": "https://static-shpf.mageworx.com/img/uploads/productoptions/3212/b7eddc21b66a8e47ffdbd714453f69b4.png"
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
       },
       {
         "name": "Within Timer",
@@ -678,7 +779,7 @@ _В этом примере при переклчюении родительск
         "price": 3,
         "default": false,
         "id": "timerOptionYes2zxc",
-        "image": "https://static-shpf.mageworx.com/img/uploads/productoptions/3212/b7eddc21b66a8e47ffdbd714453f69b4.png"
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
       },
       {
         "name": "Within Timer",
@@ -686,7 +787,7 @@ _В этом примере при переклчюении родительск
         "price": 4,
         "default": false,
         "id": "timerOptionYes3zxc",
-        "image": "https://static-shpf.mageworx.com/img/uploads/productoptions/3212/b7eddc21b66a8e47ffdbd714453f69b4.png"
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
       },
       {
         "name": "Within Timer",
@@ -694,7 +795,7 @@ _В этом примере при переклчюении родительск
         "price": 5,
         "default": false,
         "id": "timerOptionYes4zxc",
-        "image": "https://static-shpf.mageworx.com/img/uploads/productoptions/3212/b7eddc21b66a8e47ffdbd714453f69b4.png"
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
       },
       {
         "name": "Within Timer",
@@ -702,7 +803,7 @@ _В этом примере при переклчюении родительск
         "price": 5,
         "default": false,
         "id": "timerOptionYes5zxc",
-        "image": "https://static-shpf.mageworx.com/img/uploads/productoptions/3212/b7eddc21b66a8e47ffdbd714453f69b4.png"
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
       },
       {
         "name": "Within Timer",
@@ -710,7 +811,7 @@ _В этом примере при переклчюении родительск
         "price": 5,
         "default": false,
         "id": "timerOptionYes6zxc",
-        "image": "https://static-shpf.mageworx.com/img/uploads/productoptions/3212/b7eddc21b66a8e47ffdbd714453f69b4.png"
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
       }
     ]
   },
@@ -894,10 +995,7 @@ _В этом примере при переклчюении родительск
     "id": "key3",
     "size": "is-full",
     "type": "select-key",
-    "quick": [
-      "keyValue103",
-      "keyValue125"
-    ],
+    "quick": ["keyValue103", "keyValue125"],
     "values": [
       {
         "name": "MYTHIC +10",
@@ -949,10 +1047,7 @@ _В этом примере при переклчюении родительск
     "id": "key2",
     "size": "is-half",
     "type": "select-key",
-    "quick": [
-      "keyValue10",
-      "keyValue15"
-    ],
+    "quick": ["keyValue10", "keyValue15"],
     "values": [
       {
         "name": "MYTHIC +10",
@@ -1043,11 +1138,7 @@ _В этом примере при переклчюении родительск
         "id": "timerOptionYes1",
         "richComment": "<a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>",
         "series": "timerOptionYes",
-        "parents": [
-          "keyValue10",
-          "keyValue11",
-          "keyValue12"
-        ]
+        "parents": ["keyValue10", "keyValue11", "keyValue12"]
       },
       {
         "name": "Within Timer",
@@ -1057,11 +1148,7 @@ _В этом примере при переклчюении родительск
         "id": "timerOptionYes10000",
         "series": "timerOptionYes",
         "disabled": true,
-        "parents": [
-          "keyValue10",
-          "keyValue11",
-          "keyValue12"
-        ]
+        "parents": ["keyValue10", "keyValue11", "keyValue12"]
       },
       {
         "name": "Within Timer",
@@ -1070,9 +1157,7 @@ _В этом примере при переклчюении родительск
         "default": false,
         "id": "timerOptionYes2",
         "series": "timerOptionYes",
-        "parents": [
-          "keyValue13"
-        ]
+        "parents": ["keyValue13"]
       },
       {
         "name": "Within Timer",
@@ -1081,9 +1166,7 @@ _В этом примере при переклчюении родительск
         "default": false,
         "id": "timerOptionYes3",
         "series": "timerOptionYes",
-        "parents": [
-          "keyValue14"
-        ]
+        "parents": ["keyValue14"]
       },
       {
         "name": "Within Timer",
@@ -1092,9 +1175,7 @@ _В этом примере при переклчюении родительск
         "default": false,
         "id": "timerOptionYes4",
         "series": "timerOptionYes",
-        "parents": [
-          "keyValue15"
-        ]
+        "parents": ["keyValue15"]
       }
     ]
   },
@@ -1110,14 +1191,7 @@ _В этом примере при переклчюении родительск
         "price": 0,
         "default": true,
         "id": "loottrade10No",
-        "parents": [
-          "keyValue10",
-          "keyValue11",
-          "keyValue12",
-          "keyValue13",
-          "keyValue14",
-          "keyValue15"
-        ]
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
       },
       {
         "name": "+1 Loot-Trader",
@@ -1125,9 +1199,7 @@ _В этом примере при переклчюении родительск
         "price": 3,
         "default": false,
         "id": "loottrade10x1",
-        "parents": [
-          "keyValue10"
-        ]
+        "parents": ["keyValue10"]
       },
       {
         "name": "+2 Loot-Traders",
@@ -1135,9 +1207,7 @@ _В этом примере при переклчюении родительск
         "price": 6,
         "default": false,
         "id": "loottrade10x2",
-        "parents": [
-          "keyValue10"
-        ]
+        "parents": ["keyValue10"]
       },
       {
         "name": "+1 Loot-Trader",
@@ -1145,11 +1215,7 @@ _В этом примере при переклчюении родительск
         "price": 4,
         "default": false,
         "id": "loottrade11x1",
-        "parents": [
-          "keyValue11",
-          "keyValue12",
-          "keyValue13"
-        ]
+        "parents": ["keyValue11", "keyValue12", "keyValue13"]
       },
       {
         "name": "+2 Loot-Traders",
@@ -1157,11 +1223,7 @@ _В этом примере при переклчюении родительск
         "price": 8,
         "default": false,
         "id": "loottrade11x2",
-        "parents": [
-          "keyValue11",
-          "keyValue12",
-          "keyValue13"
-        ]
+        "parents": ["keyValue11", "keyValue12", "keyValue13"]
       },
       {
         "name": "+1 Loot-Trader",
@@ -1169,10 +1231,7 @@ _В этом примере при переклчюении родительск
         "price": 5,
         "default": false,
         "id": "loottrade14x1",
-        "parents": [
-          "keyValue14",
-          "keyValue15"
-        ]
+        "parents": ["keyValue14", "keyValue15"]
       },
       {
         "name": "+2 Loot-Traders",
@@ -1180,10 +1239,7 @@ _В этом примере при переклчюении родительск
         "price": 10,
         "default": false,
         "id": "loottrade14x2",
-        "parents": [
-          "keyValue14",
-          "keyValue15"
-        ]
+        "parents": ["keyValue14", "keyValue15"]
       }
     ]
   },
@@ -1199,14 +1255,7 @@ _В этом примере при переклчюении родительск
         "price": 0,
         "default": true,
         "id": "loottrade10No2",
-        "parents": [
-          "keyValue10",
-          "keyValue11",
-          "keyValue12",
-          "keyValue13",
-          "keyValue14",
-          "keyValue15"
-        ]
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
       },
       {
         "name": "+1 Loot-Trader",
@@ -1214,9 +1263,7 @@ _В этом примере при переклчюении родительск
         "price": 3,
         "default": false,
         "id": "loottrade10x13",
-        "parents": [
-          "keyValue10"
-        ]
+        "parents": ["keyValue10"]
       },
       {
         "name": "+2 Loot-Traders",
@@ -1225,9 +1272,7 @@ _В этом примере при переклчюении родительск
         "default": false,
         "id": "loottrade10x24",
         "series": "test",
-        "parents": [
-          "keyValue10"
-        ]
+        "parents": ["keyValue10"]
       },
       {
         "name": "+1 Loot-Trader",
@@ -1235,11 +1280,7 @@ _В этом примере при переклчюении родительск
         "price": 4,
         "default": false,
         "id": "loottrade11x15",
-        "parents": [
-          "keyValue11",
-          "keyValue12",
-          "keyValue13"
-        ]
+        "parents": ["keyValue11", "keyValue12", "keyValue13"]
       },
       {
         "name": "+2 Loot-Traders",
@@ -1248,11 +1289,7 @@ _В этом примере при переклчюении родительск
         "default": false,
         "id": "loottrade11x26",
         "series": "test",
-        "parents": [
-          "keyValue11",
-          "keyValue12",
-          "keyValue13"
-        ]
+        "parents": ["keyValue11", "keyValue12", "keyValue13"]
       },
       {
         "name": "+1 Loot-Trader",
@@ -1260,10 +1297,7 @@ _В этом примере при переклчюении родительск
         "price": 5,
         "default": false,
         "id": "loottrade14x17",
-        "parents": [
-          "keyValue14",
-          "keyValue15"
-        ]
+        "parents": ["keyValue14", "keyValue15"]
       },
       {
         "name": "+2 Loot-Traders",
@@ -1272,10 +1306,7 @@ _В этом примере при переклчюении родительск
         "default": false,
         "series": "test",
         "id": "loottrade14x28",
-        "parents": [
-          "keyValue14",
-          "keyValue15"
-        ]
+        "parents": ["keyValue14", "keyValue15"]
       }
     ]
   },
@@ -1293,14 +1324,7 @@ _В этом примере при переклчюении родительск
         "mark": true,
         "default": true,
         "id": "rangeSlider01",
-        "parents": [
-          "keyValue10",
-          "keyValue11",
-          "keyValue12",
-          "keyValue13",
-          "keyValue14",
-          "keyValue15"
-        ]
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
       },
       {
         "name": "op2",
@@ -1309,14 +1333,7 @@ _В этом примере при переклчюении родительск
         "mark": true,
         "default": false,
         "id": "rangeSlider02",
-        "parents": [
-          "keyValue10",
-          "keyValue11",
-          "keyValue12",
-          "keyValue13",
-          "keyValue14",
-          "keyValue15"
-        ]
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
       },
       {
         "name": "op3",
@@ -1325,14 +1342,7 @@ _В этом примере при переклчюении родительск
         "mark": false,
         "default": false,
         "id": "rangeSlider03",
-        "parents": [
-          "keyValue10",
-          "keyValue11",
-          "keyValue12",
-          "keyValue13",
-          "keyValue14",
-          "keyValue15"
-        ]
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
       },
       {
         "name": "op4",
@@ -1342,14 +1352,7 @@ _В этом примере при переклчюении родительск
         "default": false,
         "id": "rangeSlider04",
         "series": "rangeSlider04",
-        "parents": [
-          "keyValue10",
-          "keyValue11",
-          "keyValue12",
-          "keyValue13",
-          "keyValue14",
-          "keyValue15"
-        ]
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
       },
       {
         "name": "op4a",
@@ -1359,9 +1362,7 @@ _В этом примере при переклчюении родительск
         "default": false,
         "series": "rangeSlider04",
         "id": "rangeSlider04-1",
-        "parents": [
-          "keyValue14"
-        ]
+        "parents": ["keyValue14"]
       },
       {
         "name": "op5a",
@@ -1371,9 +1372,7 @@ _В этом примере при переклчюении родительск
         "default": false,
         "series": "rangeSlider05",
         "id": "rangeSlider05-1",
-        "parents": [
-          "keyValue14"
-        ]
+        "parents": ["keyValue14"]
       },
       {
         "name": "op5b",
@@ -1383,9 +1382,7 @@ _В этом примере при переклчюении родительск
         "default": false,
         "series": "rangeSlider05",
         "id": "rangeSlider05-2",
-        "parents": [
-          "keyValue15"
-        ]
+        "parents": ["keyValue15"]
       }
     ]
   },
@@ -1403,14 +1400,7 @@ _В этом примере при переклчюении родительск
         "mark": true,
         "default": true,
         "id": "rangeSlider11",
-        "parents": [
-          "keyValue10",
-          "keyValue11",
-          "keyValue12",
-          "keyValue13",
-          "keyValue14",
-          "keyValue15"
-        ]
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
       },
       {
         "name": "op2",
@@ -1418,14 +1408,7 @@ _В этом примере при переклчюении родительск
         "mark": " ",
         "default": false,
         "id": "rangeSlider12",
-        "parents": [
-          "keyValue10",
-          "keyValue11",
-          "keyValue12",
-          "keyValue13",
-          "keyValue14",
-          "keyValue15"
-        ]
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
       },
       {
         "name": "op3",
@@ -1433,14 +1416,7 @@ _В этом примере при переклчюении родительск
         "mark": false,
         "default": false,
         "id": "rangeSlider13",
-        "parents": [
-          "keyValue10",
-          "keyValue11",
-          "keyValue12",
-          "keyValue13",
-          "keyValue14",
-          "keyValue15"
-        ]
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
       },
       {
         "name": "op4",
@@ -1449,14 +1425,7 @@ _В этом примере при переклчюении родительск
         "default": true,
         "id": "rangeSlider14",
         "series": "rangeSlider04",
-        "parents": [
-          "keyValue10",
-          "keyValue11",
-          "keyValue12",
-          "keyValue13",
-          "keyValue14",
-          "keyValue15"
-        ]
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
       },
       {
         "name": "op4a",
@@ -1465,9 +1434,7 @@ _В этом примере при переклчюении родительск
         "default": false,
         "series": "rangeSlider04",
         "id": "rangeSlider14-1",
-        "parents": [
-          "keyValue14"
-        ]
+        "parents": ["keyValue14"]
       },
       {
         "name": "op5a",
@@ -1476,9 +1443,7 @@ _В этом примере при переклчюении родительск
         "default": false,
         "series": "rangeSlider05",
         "id": "rangeSlider15-1",
-        "parents": [
-          "keyValue14"
-        ]
+        "parents": ["keyValue14"]
       },
       {
         "name": "op5b",
@@ -1487,51 +1452,125 @@ _В этом примере при переклчюении родительск
         "default": false,
         "series": "rangeSlider05",
         "id": "rangeSlider15-2",
-        "parents": [
-          "keyValue15"
-        ]
+        "parents": ["keyValue15"]
       }
     ]
-  }
-]
-```
-
-## Пример локализации
-
-```json
-[
+  },
   {
-    "title": "Items group TITLE",
-    "label": "Items group LABEL",
-    "translations": {
-      "de": {
-        "label": "Items group LABEL DE"
-      }
-    },
-    "id": "items",
+    "title": "Radio Rich Option",
+    "id": "playMethodasd123",
+    "type": "radio-rich",
     "size": "is-full",
-    "type": "checkbox",
+    "cssClass": "my-4",
+    "required": true,
     "values": [
       {
-        "name": "Hallen der Hingabe",
-        "label": "labelEN",
-        "itemLink": "<a href=\"https://ptr.wowhead.com/item=169223/ashjrakamas-shroud-of-resolve\" title=\"Ashjra'kamas, Shroud of Resolve\" target=\"_blank\" rel=\"noopener noreferrer\">Ashjra'kamas, Shroud of Resolve</a>",
-        "comment": "comment",
-        "price": -10.00,
+        "name": "Account Sharing",
+        "comment": "Our player logs in to your character and plays during the boost",
+        "price": 5,
+        "priceGhost": 15,
         "default": false,
-        "id": "items1",
-        "translations": {
-          "de": {
-            "label": "label DE",
-            "comment": "comment DE",
-            "itemLink": "<a href=\"https://de.wowhead.com/achievement=14194/hallen-der-hingabe\" target=\"_blank\" title=\"Halls of Devotion\" rel=\"noopener noreferrer\">Hallen der Hingabe</a>"
-          }
-        }
+        "id": "playMethodValueAccasd123",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg",
+        "imagePosition": "right",
+        "richComment": "We will run Mythic+ dungeon guaranted within timer <a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>"
+      },
+      {
+        "name": "Selfplay",
+        "comment": "Join our players team and play yourself during the boost",
+        "price": 0,
+        "priceGhost": 15,
+        "default": false,
+        "id": "playMethodValueSelf0asd123",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg",
+        "richComment": "We will run Mythic+ dungeon guaranted within timer <a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>"
+      },
+      {
+        "name": "Selfplay",
+        "comment": "Join our players team and play yourself during the boost",
+        "price": 0,
+        "priceGhost": 15,
+        "disabled": true,
+        "default": false,
+        "id": "playMethodValueSelf0asd00123",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg",
+        "imagePosition": "right",
+        "richComment": "We will run Mythic+ dungeon guaranted within timer <a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>"
+      }
+    ]
+  },
+  {
+    "title": "Checkbox Rich Option",
+    "comment": "Choose your run whether within timer or not",
+    "id": "timerOptionzxcasd",
+    "size": "is-full",
+    "type": "checkbox-rich",
+    "invalidMessage": "Custom message",
+    "required": true,
+    "minLimit": 2,
+    "maxLimit": 3,
+    "cssClass": "my-4 border border-success",
+    "values": [
+      {
+        "name": "Within Timer",
+        "price": 0,
+        "default": false,
+        "id": "timerOptionYes1zxcasd",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg",
+        "imagePosition": "right",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "richComment": "We will run Mythic+ dungeon guaranted within timer <a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>"
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 3,
+        "priceGhost": 15,
+        "default": false,
+        "id": "timerOptionYes2zxcasd",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
+      },
+      {
+        "name": "Within Timer",
+        "price": 4,
+        "priceGhost": 15,
+        "default": false,
+        "id": "timerOptionYes3zxcasd",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "richComment": "We will run Mythic+ dungeon guaranted within timer <a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>"
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 5,
+        "default": false,
+        "id": "timerOptionYes4zxcasd",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 5,
+        "priceGhost": 15,
+        "default": false,
+        "id": "timerOptionYes5zxcasd",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 5,
+        "priceGhost": 15,
+        "default": false,
+        "id": "timerOptionYes6zxcasd",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
       }
     ]
   }
 ]
 ```
+
 ---
 
 ## Пример конфига с ценовыми правилами
@@ -1677,7 +1716,7 @@ _В этом примере при переклчюении родительск
       }
     ]
   },
-    {
+  {
     "title": "opt6",
     "comment": "multi, affectBasePrice-, affectQuantity-, allOpt+",
     "id": "opt6",
@@ -1706,7 +1745,7 @@ _В этом примере при переклчюении родительск
       }
     ]
   },
-      {
+  {
     "title": "opt6",
     "comment": "multi, affectBasePrice-, affectQuantity-, allOpt+",
     "id": "opt7",
@@ -1735,7 +1774,7 @@ _В этом примере при переклчюении родительск
       }
     ]
   },
-    {
+  {
     "title": "opt8",
     "id": "opt8",
     "comment": "multi, affectBasePrice-, affectQuantity-, opt2+",
