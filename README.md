@@ -546,19 +546,19 @@ _В этом примере при паренте `someParentId` опция ви
 
 ```json
 {
-	"id": "portals",
-	"type": "portal",
-	"size": "is-full",
-	"values": [
-		{
-			"name": "_hidden",
-			"id": "portal1"
-		},
-		{
-			"name": "_hidden",
-			"id": "portal2"
-		}
-	]
+  "id": "portals",
+  "type": "portal",
+  "size": "is-full",
+  "values": [
+    {
+      "name": "_hidden",
+      "id": "portal1"
+    },
+    {
+      "name": "_hidden",
+      "id": "portal2"
+    }
+  ]
 }
 ```
 
@@ -598,40 +598,40 @@ _В этом примере при паренте `someParentId` опция ви
 
 ```json
 {
-	"title": "Slot reserve",
-	"id": "slot",
-	"size": "is-full",
-	"type": "hp-event",
-	"required": true,
-	"values": [
-		{
-			"hpId": "f9b084fb659744f584b4b770651fbe99",
-			"id": "slot-reserve0-a",
-			"faction": "alliance",
-			"parents": [["keyValue103", "playMethodValueSelf"]]
-		},
-		{
-			"hpId": "f9b084fb659744f584b4b770651fbe99",
-			"id": "slot-reserve0-h",
-			"faction": "horde",
-			"parents": [["keyValue103", "playMethodValueAcc"]]
-		},
-		{
-			"hpId": "393c28fd77754d3bb59de3d2a9a4606f",
-			"id": "slot-reserve1",
-			"parents": ["keyValue136"]
-		},
-		{
-			"hpId": "03847083cb24423fa7fbc2940814e973",
-			"id": "slot-reserve2",
-			"parents": [["keyValue114", "playMethodValueAcc", "loot-option-x3"]]
-		},
-		{
-			"hpId": "e40326add71d4defb5ac9974cc3f8af7",
-			"id": "slot-reserv32",
-			"parents": ["keyValue125"]
-		}
-	]
+  "title": "Slot reserve",
+  "id": "slot",
+  "size": "is-full",
+  "type": "hp-event",
+  "required": true,
+  "values": [
+    {
+      "hpId": "f9b084fb659744f584b4b770651fbe99",
+      "id": "slot-reserve0-a",
+      "faction": "alliance",
+      "parents": [["keyValue103", "playMethodValueSelf"]]
+    },
+    {
+      "hpId": "f9b084fb659744f584b4b770651fbe99",
+      "id": "slot-reserve0-h",
+      "faction": "horde",
+      "parents": [["keyValue103", "playMethodValueAcc"]]
+    },
+    {
+      "hpId": "393c28fd77754d3bb59de3d2a9a4606f",
+      "id": "slot-reserve1",
+      "parents": ["keyValue136"]
+    },
+    {
+      "hpId": "03847083cb24423fa7fbc2940814e973",
+      "id": "slot-reserve2",
+      "parents": [["keyValue114", "playMethodValueAcc", "loot-option-x3"]]
+    },
+    {
+      "hpId": "e40326add71d4defb5ac9974cc3f8af7",
+      "id": "slot-reserv32",
+      "parents": ["keyValue125"]
+    }
+  ]
 }
 ```
 
@@ -692,34 +692,34 @@ _В этом примере при паренте `someParentId` опция ви
 
 ```json
 [
-	{
-		"id": "Difficulty",
-		"title": "Difficulty",
-		"scopes": ["some_not_active_extension_slug", "ext-d4"],
-		"size": "is-half",
-		"type": "switch",
-		"priceRule": {
-			"affectQuantity": false,
-			"method": "multiply",
-			"affectOptions": true
-		},
-		"values": [
-			{
-				"id": "Softcore",
-				"price": 2,
-				"name": "Softcore",
-				"default": true,
-				"scopes": ["ext-d4", "game"]
-			},
-			{
-				"id": "Hardcore",
-				"price": 3,
-				"name": "Hardcore",
-				"default": false,
-				"scopes": ["ext-d4", "product"]
-			}
-		]
-	}
+  {
+    "id": "Difficulty",
+    "title": "Difficulty",
+    "scopes": ["some_not_active_extension_slug", "ext-d4"],
+    "size": "is-half",
+    "type": "switch",
+    "priceRule": {
+      "affectQuantity": false,
+      "method": "multiply",
+      "affectOptions": true
+    },
+    "values": [
+      {
+        "id": "Softcore",
+        "price": 2,
+        "name": "Softcore",
+        "default": true,
+        "scopes": ["ext-d4", "game"]
+      },
+      {
+        "id": "Hardcore",
+        "price": 3,
+        "name": "Hardcore",
+        "default": false,
+        "scopes": ["ext-d4", "product"]
+      }
+    ]
+  }
 ]
 ```
 
@@ -729,28 +729,28 @@ slug записи: `ext-d4`
 
 ```json
 [
-	{
-		"title": "Difficulty from ext-d4",
-		"size": "is-full",
-		"id": "Difficulty",
-		"priceRule": {
-			"affectQuantity": false,
-			"method": "add",
-			"affectOptions": true
-		}
-	},
-	{
-		"price": 100,
-		"name": "Softcore from ext-d4",
-		"default": false,
-		"id": "Softcore"
-	},
-	{
-		"price": 300,
-		"name": "Hardcore from ext-d4",
-		"default": true,
-		"id": "Hardcore"
-	}
+  {
+    "title": "Difficulty from ext-d4",
+    "size": "is-full",
+    "id": "Difficulty",
+    "priceRule": {
+      "affectQuantity": false,
+      "method": "add",
+      "affectOptions": true
+    }
+  },
+  {
+    "price": 100,
+    "name": "Softcore from ext-d4",
+    "default": false,
+    "id": "Softcore"
+  },
+  {
+    "price": 300,
+    "name": "Hardcore from ext-d4",
+    "default": true,
+    "id": "Hardcore"
+  }
 ]
 ```
 
@@ -791,86 +791,86 @@ _В этом примере при переключении родительск
 
 ```json
 [
-	{
-		"title": "Key",
-		"id": "key",
-		"type": "select-key",
-		"values": [
-			{
-				"name": "MYTHIC +10",
-				"price": 17.95,
-				"default": true,
-				"id": "keyValue10"
-			},
-			{
-				"name": "MYTHIC +11",
-				"price": 19.95,
-				"id": "keyValue11"
-			},
-			{
-				"name": "MYTHIC +12",
-				"price": 21.95,
-				"id": "keyValue12"
-			}
-		]
-	},
-	{
-		"title": "Timer Option",
-		"id": "timerOption",
-		"type": "checkbox",
-		"values": [
-			{
-				"name": "Within Timer",
-				"price": 10,
-				"default": true,
-				"id": "timerOptionYes1",
-				"series": "timerOptionYes",
-				"parents": ["keyValue10"]
-			},
-			{
-				"name": "Within Timer",
-				"price": 12,
-				"id": "timerOptionYes2",
-				"series": "timerOptionYes",
-				"parents": ["keyValue11"]
-			},
-			{
-				"name": "Within Timer",
-				"price": 15,
-				"id": "timerOptionYes3",
-				"series": "timerOptionYes",
-				"parents": ["keyValue12"]
-			},
-			{
-				"name": "Some option",
-				"price": 5,
-				"default": false,
-				"id": "someId1",
-				"parents": ["keyValue11", "keyValue12"]
-			},
-			{
-				"name": "Some another option",
-				"price": 20,
-				"default": false,
-				"id": "someId2"
-			}
-		]
-	},
-	{
-		"title": "Personal Loot",
-		"id": "personalLoot",
-		"type": "checkbox",
-		"values": [
-			{
-				"name": "Yes",
-				"price": 10,
-				"default": true,
-				"id": "someId3",
-				"series": "timerOptionYes",
-				"parents": [["keyValue11", "someId1"]]
-			}
-		]
-	}
+  {
+    "title": "Key",
+    "id": "key",
+    "type": "select-key",
+    "values": [
+      {
+        "name": "MYTHIC +10",
+        "price": 17.95,
+        "default": true,
+        "id": "keyValue10"
+      },
+      {
+        "name": "MYTHIC +11",
+        "price": 19.95,
+        "id": "keyValue11"
+      },
+      {
+        "name": "MYTHIC +12",
+        "price": 21.95,
+        "id": "keyValue12"
+      }
+    ]
+  },
+  {
+    "title": "Timer Option",
+    "id": "timerOption",
+    "type": "checkbox",
+    "values": [
+      {
+        "name": "Within Timer",
+        "price": 10,
+        "default": true,
+        "id": "timerOptionYes1",
+        "series": "timerOptionYes",
+        "parents": ["keyValue10"]
+      },
+      {
+        "name": "Within Timer",
+        "price": 12,
+        "id": "timerOptionYes2",
+        "series": "timerOptionYes",
+        "parents": ["keyValue11"]
+      },
+      {
+        "name": "Within Timer",
+        "price": 15,
+        "id": "timerOptionYes3",
+        "series": "timerOptionYes",
+        "parents": ["keyValue12"]
+      },
+      {
+        "name": "Some option",
+        "price": 5,
+        "default": false,
+        "id": "someId1",
+        "parents": ["keyValue11", "keyValue12"]
+      },
+      {
+        "name": "Some another option",
+        "price": 20,
+        "default": false,
+        "id": "someId2"
+      }
+    ]
+  },
+  {
+    "title": "Personal Loot",
+    "id": "personalLoot",
+    "type": "checkbox",
+    "values": [
+      {
+        "name": "Yes",
+        "price": 10,
+        "default": true,
+        "id": "someId3",
+        "series": "timerOptionYes",
+        "parents": [["keyValue11", "someId1"]]
+      }
+    ]
+  }
 ]
 ```
 
@@ -880,21 +880,21 @@ _В этом примере при переключении родительск
 
 ```json
 {
-	"title": "Personal Loot",
-	"//label": " -> это значение будет проигнорировано <- ",
-	"label": "Visible label",
-	"id": "personalLoot",
-	"type": "checkbox",
-	"values": [
-		{
-			"name": "Yes",
-			"price": 10,
-			"default": true,
-			"id": "someId3",
-			"series": "timerOptionYes",
-			"parents": [["keyValue11", "someId1"]]
-		}
-	]
+  "title": "Personal Loot",
+  "//label": " -> это значение будет проигнорировано <- ",
+  "label": "Visible label",
+  "id": "personalLoot",
+  "type": "checkbox",
+  "values": [
+    {
+      "name": "Yes",
+      "price": 10,
+      "default": true,
+      "id": "someId3",
+      "series": "timerOptionYes",
+      "parents": [["keyValue11", "someId1"]]
+    }
+  ]
 }
 ```
 
@@ -902,988 +902,988 @@ _В этом примере при переключении родительск
 
 ```json
 [
-	{
-		"title": "Items group",
-		"id": "items",
-		"size": "is-full",
-		"type": "checkbox",
-		"values": [
-			{
-				"name": "Hallen der Hingabe",
-				"itemLink": "<a href=\"https://de.wowhead.com/achievement=14194/hallen-der-hingabe\" target=\"_blank\" title=\"Halls of Devotion\" rel=\"noopener noreferrer\">Hallen der Hingabe</a>",
-				"comment": "comment",
-				"richComment": "<a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>",
-				"price": 10.0,
-				"default": false,
-				"id": "items1"
-			},
-			{
-				"name": "Verschlüsselte Schrift aus Ny'alotha",
-				"itemLink": "<a href=\"https://ptr.wowhead.com/item=169223/ashjrakamas-shroud-of-resolve\" title=\"Ashjra'kamas, Shroud of Resolve\" target=\"_blank\" rel=\"noopener noreferrer\">Ashjra'kamas, Shroud of Resolve</a>",
-				"comment": "comment",
-				"price": 20.0,
-				"default": false,
-				"id": "items2",
-				"parents": ["simple-select8"]
-			}
-		]
-	},
-	{
-		"title": "custom select image",
-		"label": "",
-		"comment": "Comment for select",
-		"size": "is-half",
-		"id": "select-simple",
-		"type": "select",
-		"values": [
-			{
-				"name": "simple-select1",
-				"price": 17.95,
-				"default": true,
-				"id": "simple-select7"
-			},
-			{
-				"name": "simple-select2",
-				"price": 19.95,
-				"default": false,
-				"id": "simple-select8",
-				"comment": "option comment"
-			},
-			{
-				"name": "simple-select3",
-				"price": 21.95,
-				"default": false,
-				"id": "simple-select9"
-			},
-			{
-				"name": "simple-select4",
-				"price": 23.95,
-				"default": false,
-				"id": "simple-select10"
-			},
-			{
-				"name": "simple-select5",
-				"price": 26.95,
-				"default": false,
-				"id": "simple-select11"
-			}
-		]
-	},
-	{
-		"title": "Switch",
-		"id": "switch",
-		"size": "is-half",
-		"type": "switch",
-		"values": [
-			{
-				"name": "Sharing",
-				"comment": "Our player logs in to your character and plays during the boost",
-				"price": 5,
-				"default": false,
-				"id": "playMethodValueAcc5"
-			},
-			{
-				"name": "Selfplay",
-				"comment": "Join our players team and play yourself during the boost",
-				"price": 0,
-				"default": true,
-				"id": "playMethodValueSelf10"
-			}
-		]
-	},
-	{
-		"title": "Switch",
-		"id": "switch2",
-		"size": "is-full",
-		"type": "switch",
-		"values": [
-			{
-				"name": "Sharing",
-				"comment": "Our player logs in to your character and plays during the boost",
-				"price": 5,
-				"priceLabel": 0,
-				"default": true,
-				"id": "1playMethodValueAcc5"
-			},
-			{
-				"name": "Selfplay",
-				"comment": "Join our players team and play yourself during the boost",
-				"price": 0,
-				"priceLabel": 0,
-				"default": false,
-				"id": "2playMethodValueSelf10"
-			},
-			{
-				"name": "Sharing",
-				"comment": "Our player logs in to your character and plays during the boost",
-				"price": 5,
-				"default": false,
-				"id": "3playMethodValueAcc5"
-			},
-			{
-				"name": "Selfplay",
-				"comment": "Join our players team and play yourself during the boost",
-				"price": 0,
-				"default": false,
-				"id": "4playMethodValueSelf10"
-			},
-			{
-				"name": "Sharing",
-				"comment": "Our player logs in to your character and plays during the boost",
-				"price": 5,
-				"default": false,
-				"id": "5playMethodValueAcc5"
-			}
-		]
-	},
-	{
-		"title": "Image Radio",
-		"id": "playMethodasd",
-		"size": "is-half",
-		"type": "radio",
-		"required": true,
-		"values": [
-			{
-				"name": "Account Sharing",
-				"comment": "Our player logs in to your character and plays during the boost",
-				"price": 5,
-				"default": false,
-				"id": "playMethodValueAccasd",
-				"image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
-			},
-			{
-				"name": "Selfplay",
-				"comment": "Join our players team and play yourself during the boost",
-				"price": 0,
-				"default": false,
-				"id": "playMethodValueSelf0asd",
-				"image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
-			},
-			{
-				"name": "Selfplay",
-				"comment": "Join our players team and play yourself during the boost",
-				"price": 0,
-				"disabled": true,
-				"default": false,
-				"id": "playMethodValueSelf0asd00",
-				"image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
-			}
-		]
-	},
-	{
-		"title": "Timer Option",
-		"comment": "Choose your run whether within timer or not",
-		"id": "timerOptionzxc",
-		"size": "is-full",
-		"type": "checkbox",
-		"invalidMessage": "Custom message",
-		"required": true,
-		"minLimit": 2,
-		"maxLimit": 3,
-		"values": [
-			{
-				"name": "Within Timer",
-				"comment": "We will run Mythic+ dungeon guaranted within timer",
-				"price": 0,
-				"default": false,
-				"id": "timerOptionYes1zxc",
-				"image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
-			},
-			{
-				"name": "Within Timer",
-				"comment": "We will run Mythic+ dungeon guaranted within timer",
-				"price": 3,
-				"default": false,
-				"id": "timerOptionYes2zxc",
-				"image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
-			},
-			{
-				"name": "Within Timer",
-				"comment": "We will run Mythic+ dungeon guaranted within timer",
-				"price": 4,
-				"default": false,
-				"id": "timerOptionYes3zxc",
-				"image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
-			},
-			{
-				"name": "Within Timer",
-				"comment": "We will run Mythic+ dungeon guaranted within timer",
-				"price": 5,
-				"default": false,
-				"id": "timerOptionYes4zxc",
-				"image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
-			},
-			{
-				"name": "Within Timer",
-				"comment": "We will run Mythic+ dungeon guaranted within timer",
-				"price": 5,
-				"default": false,
-				"id": "timerOptionYes5zxc",
-				"image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
-			},
-			{
-				"name": "Within Timer",
-				"comment": "We will run Mythic+ dungeon guaranted within timer",
-				"price": 5,
-				"default": false,
-				"id": "timerOptionYes6zxc",
-				"image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
-			}
-		]
-	},
-	{
-		"title": "Widget Notification",
-		"id": "widget",
-		"type": "hidden",
-		"values": [
-			{
-				"name": "WIDGET",
-				"comment": "",
-				"price": 0,
-				"default": true,
-				"id": "widget"
-			}
-		]
-	},
-	{
-		"title": "Input",
-		"comment": "Comment for input",
-		"id": "input3",
-		"required": true,
-		"size": "is-full",
-		"type": "text-input",
-		"values": [
-			{
-				"name": "",
-				"price": 0,
-				"default": true,
-				"id": "input4"
-			}
-		]
-	},
-	{
-		"title": "Input",
-		"comment": "Comment for input",
-		"id": "input",
-		"size": "is-half",
-		"type": "text-input",
-		"values": [
-			{
-				"name": "",
-				"price": 0,
-				"default": true,
-				"id": "input1"
-			}
-		]
-	},
-	{
-		"title": "custom select image",
-		"label": "",
-		"comment": "Comment for select",
-		"size": "is-full",
-		"id": "select-custom36",
-		"type": "select-custom",
-		"values": [
-			{
-				"name": "custom-select1",
-				"price": 17.95,
-				"default": true,
-				"id": "custom-select37"
-			},
-			{
-				"name": "custom-select2",
-				"price": 19.95,
-				"default": false,
-				"id": "custom-select38",
-				"comment": "option comment"
-			},
-			{
-				"name": "custom-select3",
-				"price": 21.95,
-				"default": false,
-				"id": "custom-select39"
-			},
-			{
-				"name": "custom-select4",
-				"price": 23.95,
-				"default": false,
-				"id": "custom-select310"
-			},
-			{
-				"name": "custom-select5",
-				"price": 26.95,
-				"default": false,
-				"id": "custom-select311"
-			}
-		]
-	},
-	{
-		"title": "custom select image",
-		"label": "",
-		"comment": "Comment for select",
-		"size": "is-half",
-		"id": "select-custom6",
-		"type": "select-custom",
-		"image": "https://cdn.shopify.com/s/files/1/0987/2678/files/wow-farm-transmog_91e71ca3-3d64-41a1-8309-5061fd572a0f.png?4880513842382269742",
-		"values": [
-			{
-				"name": "custom-select1",
-				"price": 17.95,
-				"default": true,
-				"id": "custom-select7"
-			},
-			{
-				"name": "custom-select2",
-				"price": 19.95,
-				"default": false,
-				"id": "custom-select8",
-				"comment": "option comment"
-			},
-			{
-				"name": "custom-select3",
-				"price": 21.95,
-				"default": false,
-				"id": "custom-select9"
-			},
-			{
-				"name": "custom-select4",
-				"price": 23.95,
-				"default": false,
-				"id": "custom-select10"
-			},
-			{
-				"name": "custom-select5",
-				"price": 26.95,
-				"default": false,
-				"id": "custom-select11"
-			}
-		]
-	},
-	{
-		"title": "custom select",
-		"label": "",
-		"comment": "Comment for select",
-		"size": "is-half",
-		"id": "select-custom",
-		"type": "select-custom",
-		"values": [
-			{
-				"name": "custom-select1",
-				"price": 17.95,
-				"default": true,
-				"id": "custom-select1",
-				"image": "https://cdn.shopify.com/s/files/1/0987/2678/files/raid1.png?2233282437125190411"
-			},
-			{
-				"name": "custom-select2",
-				"price": 19.95,
-				"default": false,
-				"id": "custom-select2",
-				"comment": "option comment",
-				"image": "https://cdn.shopify.com/s/files/1/0987/2678/files/trophy3.png?2233282437125190411"
-			},
-			{
-				"name": "custom-select3",
-				"price": 21.95,
-				"default": false,
-				"id": "custom-select3",
-				"image": "https://cdn.shopify.com/s/files/1/0987/2678/files/raid1.png?2233282437125190411"
-			},
-			{
-				"name": "custom-select4",
-				"price": 23.95,
-				"default": false,
-				"id": "custom-select4",
-				"image": "https://cdn.shopify.com/s/files/1/0987/2678/files/raid1.png?2233282437125190411"
-			},
-			{
-				"name": "custom-select5",
-				"price": 26.95,
-				"default": false,
-				"id": "custom-select5",
-				"image": "https://cdn.shopify.com/s/files/1/0987/2678/files/raid1.png?2233282437125190411"
-			}
-		]
-	},
-	{
-		"title": "Key",
-		"label": "Pick a key level:",
-		"id": "key3",
-		"size": "is-full",
-		"type": "select-key",
-		"quick": ["keyValue103", "keyValue125"],
-		"values": [
-			{
-				"name": "MYTHIC +10",
-				"priceLabel": 17.95,
-				"price": 17.95,
-				"default": true,
-				"id": "keyValue103"
-			},
-			{
-				"name": "MYTHIC +11",
-				"priceLabel": 19.95,
-				"price": 19.95,
-				"default": false,
-				"id": "keyValue114"
-			},
-			{
-				"name": "MYTHIC +12",
-				"priceLabel": 21.95,
-				"price": 21.95,
-				"default": false,
-				"id": "keyValue125"
-			},
-			{
-				"name": "MYTHIC +13",
-				"priceLabel": 23.95,
-				"price": 23.95,
-				"default": false,
-				"id": "keyValue136"
-			},
-			{
-				"name": "MYTHIC +14",
-				"priceLabel": 26.95,
-				"price": 26.95,
-				"default": false,
-				"id": "keyValue147"
-			},
-			{
-				"name": "MYTHIC +15",
-				"priceLabel": 29.95,
-				"price": 29.95,
-				"default": false,
-				"id": "keyValue158"
-			}
-		]
-	},
-	{
-		"title": "Key",
-		"label": "Pick a key level:",
-		"id": "key2",
-		"size": "is-half",
-		"type": "select-key",
-		"quick": ["keyValue10", "keyValue15"],
-		"values": [
-			{
-				"name": "MYTHIC +10",
-				"priceLabel": 17.95,
-				"price": 17.95,
-				"default": true,
-				"id": "keyValue10"
-			},
-			{
-				"name": "MYTHIC +11",
-				"priceLabel": 19.95,
-				"price": 19.95,
-				"default": false,
-				"id": "keyValue11"
-			},
-			{
-				"name": "MYTHIC +12",
-				"priceLabel": 21.95,
-				"price": 21.95,
-				"default": false,
-				"id": "keyValue12"
-			},
-			{
-				"name": "MYTHIC +13",
-				"priceLabel": 23.95,
-				"price": 23.95,
-				"default": false,
-				"id": "keyValue13"
-			},
-			{
-				"name": "MYTHIC +14",
-				"priceLabel": 26.95,
-				"price": 26.95,
-				"default": false,
-				"id": "keyValue14"
-			},
-			{
-				"name": "MYTHIC +15",
-				"priceLabel": 29.95,
-				"price": 29.95,
-				"default": false,
-				"id": "keyValue15"
-			}
-		]
-	},
-	{
-		"title": "Play Method",
-		"id": "playMethod",
-		"size": "is-half",
-		"type": "radio",
-		"values": [
-			{
-				"name": "Account Sharing",
-				"comment": "Our player logs in to your character and plays during the boost",
-				"price": 5,
-				"default": false,
-				"id": "playMethodValueAcc"
-			},
-			{
-				"name": "Selfplay",
-				"comment": "Join our players team and play yourself during the boost",
-				"price": 0,
-				"default": true,
-				"id": "playMethodValueSelf0"
-			},
-			{
-				"name": "Selfplay",
-				"comment": "Join our players team and play yourself during the boost",
-				"price": 0,
-				"disabled": true,
-				"default": true,
-				"id": "playMethodValueSelf000"
-			}
-		]
-	},
-	{
-		"title": "Timer Option",
-		"comment": "Choose your run whether within timer or not",
-		"id": "timerOption",
-		"size": "is-full",
-		"type": "checkbox",
-		"values": [
-			{
-				"name": "Within Timer",
-				"comment": "We will run Mythic+ dungeon guaranted within timer",
-				"price": 0,
-				"default": false,
-				"id": "timerOptionYes1",
-				"richComment": "<a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>",
-				"series": "timerOptionYes",
-				"parents": ["keyValue10", "keyValue11", "keyValue12"]
-			},
-			{
-				"name": "Within Timer",
-				"comment": "We will run Mythic+ dungeon guaranted within timer",
-				"price": 0,
-				"default": false,
-				"id": "timerOptionYes10000",
-				"series": "timerOptionYes",
-				"disabled": true,
-				"parents": ["keyValue10", "keyValue11", "keyValue12"]
-			},
-			{
-				"name": "Within Timer",
-				"comment": "We will run Mythic+ dungeon guaranted within timer",
-				"price": 3,
-				"default": false,
-				"id": "timerOptionYes2",
-				"series": "timerOptionYes",
-				"parents": ["keyValue13"]
-			},
-			{
-				"name": "Within Timer",
-				"comment": "We will run Mythic+ dungeon guaranted within timer",
-				"price": 4,
-				"default": false,
-				"id": "timerOptionYes3",
-				"series": "timerOptionYes",
-				"parents": ["keyValue14"]
-			},
-			{
-				"name": "Within Timer",
-				"comment": "We will run Mythic+ dungeon guaranted within timer",
-				"price": 5,
-				"default": false,
-				"id": "timerOptionYes4",
-				"series": "timerOptionYes",
-				"parents": ["keyValue15"]
-			}
-		]
-	},
-	{
-		"title": "Loot Trading",
-		"id": "loottrade",
-		"size": "is-full",
-		"type": "radio",
-		"values": [
-			{
-				"name": "Personal Loot",
-				"comment": "Run with Personal Loot option means that quantity of items you will get fully depends on your luck, which we wish you most of all :)",
-				"price": 0,
-				"default": true,
-				"id": "loottrade10No",
-				"parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
-			},
-			{
-				"name": "+1 Loot-Trader",
-				"comment": "There will be 1 player with the same armor type in your group who will trade you all items he MAY get as reward from the end of dungeon chest and thus this item IS NOT GUARANTEED. ",
-				"price": 3,
-				"default": false,
-				"id": "loottrade10x1",
-				"parents": ["keyValue10"]
-			},
-			{
-				"name": "+2 Loot-Traders",
-				"comment": "There will be 2 players with the same armor type in your group who will trade you all items they may get as reward from the end of dungeon chest and thus the items ARE NOT GUARANTEED.",
-				"price": 6,
-				"default": false,
-				"id": "loottrade10x2",
-				"parents": ["keyValue10"]
-			},
-			{
-				"name": "+1 Loot-Trader",
-				"comment": "There will be 1 player with the same armor type in your group who will trade you all items he MAY get as reward from the end of dungeon chest and thus this item IS NOT GUARANTEED. ",
-				"price": 4,
-				"default": false,
-				"id": "loottrade11x1",
-				"parents": ["keyValue11", "keyValue12", "keyValue13"]
-			},
-			{
-				"name": "+2 Loot-Traders",
-				"comment": "There will be 2 players with the same armor type in your group who will trade you all items they may get as reward from the end of dungeon chest and thus the items ARE NOT GUARANTEED.",
-				"price": 8,
-				"default": false,
-				"id": "loottrade11x2",
-				"parents": ["keyValue11", "keyValue12", "keyValue13"]
-			},
-			{
-				"name": "+1 Loot-Trader",
-				"comment": "There will be 1 player with the same armor type in your group who will trade you all items he MAY get as reward from the end of dungeon chest and thus this item IS NOT GUARANTEED. ",
-				"price": 5,
-				"default": false,
-				"id": "loottrade14x1",
-				"parents": ["keyValue14", "keyValue15"]
-			},
-			{
-				"name": "+2 Loot-Traders",
-				"comment": "There will be 2 players with the same armor type in your group who will trade you all items they may get as reward from the end of dungeon chest and thus the items ARE NOT GUARANTEED.",
-				"price": 10,
-				"default": false,
-				"id": "loottrade14x2",
-				"parents": ["keyValue14", "keyValue15"]
-			}
-		]
-	},
-	{
-		"title": "Loot Trading",
-		"id": "loottrade1",
-		"size": "is-half",
-		"type": "radio",
-		"values": [
-			{
-				"name": "Personal Loot",
-				"comment": "Run with Personal Loot option means that quantity of items you will get fully depends on your luck, which we wish you most of all :)",
-				"price": 0,
-				"default": true,
-				"id": "loottrade10No2",
-				"parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
-			},
-			{
-				"name": "+1 Loot-Trader",
-				"comment": "There will be 1 player with the same armor type in your group who will trade you all items he MAY get as reward from the end of dungeon chest and thus this item IS NOT GUARANTEED. ",
-				"price": 3,
-				"default": false,
-				"id": "loottrade10x13",
-				"parents": ["keyValue10"]
-			},
-			{
-				"name": "+2 Loot-Traders",
-				"comment": "There will be 2 players with the same armor type in your group who will trade you all items they may get as reward from the end of dungeon chest and thus the items ARE NOT GUARANTEED.",
-				"price": 6,
-				"default": false,
-				"id": "loottrade10x24",
-				"series": "test",
-				"parents": ["keyValue10"]
-			},
-			{
-				"name": "+1 Loot-Trader",
-				"comment": "There will be 1 player with the same armor type in your group who will trade you all items he MAY get as reward from the end of dungeon chest and thus this item IS NOT GUARANTEED. ",
-				"price": 4,
-				"default": false,
-				"id": "loottrade11x15",
-				"parents": ["keyValue11", "keyValue12", "keyValue13"]
-			},
-			{
-				"name": "+2 Loot-Traders",
-				"comment": "There will be 2 players with the same armor type in your group who will trade you all items they may get as reward from the end of dungeon chest and thus the items ARE NOT GUARANTEED.",
-				"price": 8,
-				"default": false,
-				"id": "loottrade11x26",
-				"series": "test",
-				"parents": ["keyValue11", "keyValue12", "keyValue13"]
-			},
-			{
-				"name": "+1 Loot-Trader",
-				"comment": "There will be 1 player with the same armor type in your group who will trade you all items he MAY get as reward from the end of dungeon chest and thus this item IS NOT GUARANTEED. ",
-				"price": 5,
-				"default": false,
-				"id": "loottrade14x17",
-				"parents": ["keyValue14", "keyValue15"]
-			},
-			{
-				"name": "+2 Loot-Traders",
-				"comment": "There will be 2 players with the same armor type in your group who will trade you all items they may get as reward from the end of dungeon chest and thus the items ARE NOT GUARANTEED.",
-				"price": 10,
-				"default": false,
-				"series": "test",
-				"id": "loottrade14x28",
-				"parents": ["keyValue14", "keyValue15"]
-			}
-		]
-	},
-	{
-		"title": "Range Slider Name",
-		"label": "Range Slider Label",
-		"id": "rangeSlider00",
-		"size": "is-half",
-		"type": "range",
-		"values": [
-			{
-				"name": "op1",
-				"comment": "Comment op1",
-				"price": 5,
-				"mark": true,
-				"default": true,
-				"id": "rangeSlider01",
-				"parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
-			},
-			{
-				"name": "op2",
-				"comment": "Comment op2",
-				"price": 12,
-				"mark": true,
-				"default": false,
-				"id": "rangeSlider02",
-				"parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
-			},
-			{
-				"name": "op3",
-				"comment": "Comment op3",
-				"price": 13,
-				"mark": false,
-				"default": false,
-				"id": "rangeSlider03",
-				"parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
-			},
-			{
-				"name": "op4",
-				"comment": "Comment op4",
-				"price": 14,
-				"mark": true,
-				"default": false,
-				"id": "rangeSlider04",
-				"series": "rangeSlider04",
-				"parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
-			},
-			{
-				"name": "op4a",
-				"comment": "Comment op4a",
-				"price": 14,
-				"mark": true,
-				"default": false,
-				"series": "rangeSlider04",
-				"id": "rangeSlider04-1",
-				"parents": ["keyValue14"]
-			},
-			{
-				"name": "op5a",
-				"comment": "Comment op5a",
-				"price": 15,
-				"mark": true,
-				"default": false,
-				"series": "rangeSlider05",
-				"id": "rangeSlider05-1",
-				"parents": ["keyValue14"]
-			},
-			{
-				"name": "op5b",
-				"comment": "Comment op5b",
-				"price": 0,
-				"mark": true,
-				"default": false,
-				"series": "rangeSlider05",
-				"id": "rangeSlider05-2",
-				"parents": ["keyValue15"]
-			}
-		]
-	},
-	{
-		"title": "Title Slider Double",
-		"label": "Label Slider Double",
-		"id": "rangeSlider01",
-		"size": "is-full",
-		"comment": "Choose your run whether within timer or not",
-		"type": "range-double",
-		"values": [
-			{
-				"name": "op1",
-				"price": 1,
-				"mark": true,
-				"default": true,
-				"id": "rangeSlider11",
-				"parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
-			},
-			{
-				"name": "op2",
-				"price": 1,
-				"mark": " ",
-				"default": false,
-				"id": "rangeSlider12",
-				"parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
-			},
-			{
-				"name": "op3",
-				"price": 1,
-				"mark": false,
-				"default": false,
-				"id": "rangeSlider13",
-				"parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
-			},
-			{
-				"name": "op4",
-				"price": 1,
-				"mark": true,
-				"default": true,
-				"id": "rangeSlider14",
-				"series": "rangeSlider04",
-				"parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
-			},
-			{
-				"name": "op4a",
-				"price": 1,
-				"mark": true,
-				"default": false,
-				"series": "rangeSlider04",
-				"id": "rangeSlider14-1",
-				"parents": ["keyValue14"]
-			},
-			{
-				"name": "op5a",
-				"price": 1,
-				"mark": true,
-				"default": false,
-				"series": "rangeSlider05",
-				"id": "rangeSlider15-1",
-				"parents": ["keyValue14"]
-			},
-			{
-				"name": "op5b",
-				"price": 1,
-				"mark": true,
-				"default": false,
-				"series": "rangeSlider05",
-				"id": "rangeSlider15-2",
-				"parents": ["keyValue15"]
-			}
-		]
-	},
-	{
-		"title": "Radio Rich Option",
-		"id": "playMethodasd123",
-		"type": "radio-rich",
-		"size": "is-full",
-		"cssClass": "my-4",
-		"required": true,
-		"values": [
-			{
-				"name": "Account Sharing",
-				"comment": "Our player logs in to your character and plays during the boost",
-				"price": 5,
-				"priceGhost": 15,
-				"default": false,
-				"id": "playMethodValueAccasd123",
-				"image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg",
-				"imagePosition": "right",
-				"richComment": "We will run Mythic+ dungeon guaranted within timer <a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>"
-			},
-			{
-				"name": "Selfplay",
-				"comment": "Join our players team and play yourself during the boost",
-				"price": 0,
-				"priceGhost": 15,
-				"default": false,
-				"id": "playMethodValueSelf0asd123",
-				"image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg",
-				"richComment": "We will run Mythic+ dungeon guaranted within timer <a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>"
-			},
-			{
-				"name": "Selfplay",
-				"comment": "Join our players team and play yourself during the boost",
-				"price": 0,
-				"priceGhost": 15,
-				"disabled": true,
-				"default": false,
-				"id": "playMethodValueSelf0asd00123",
-				"image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg",
-				"imagePosition": "right",
-				"richComment": "We will run Mythic+ dungeon guaranted within timer <a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>"
-			}
-		]
-	},
-	{
-		"title": "Checkbox Rich Option",
-		"comment": "Choose your run whether within timer or not",
-		"id": "timerOptionzxcasd",
-		"size": "is-full",
-		"type": "checkbox-rich",
-		"invalidMessage": "Custom message",
-		"required": true,
-		"minLimit": 2,
-		"maxLimit": 3,
-		"cssClass": "my-4 border border-success",
-		"values": [
-			{
-				"name": "Within Timer",
-				"price": 0,
-				"default": false,
-				"id": "timerOptionYes1zxcasd",
-				"image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg",
-				"imagePosition": "right",
-				"comment": "We will run Mythic+ dungeon guaranted within timer",
-				"richComment": "We will run Mythic+ dungeon guaranted within timer <a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>"
-			},
-			{
-				"name": "Within Timer",
-				"comment": "We will run Mythic+ dungeon guaranted within timer",
-				"price": 3,
-				"priceGhost": 15,
-				"default": false,
-				"id": "timerOptionYes2zxcasd",
-				"image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
-			},
-			{
-				"name": "Within Timer",
-				"price": 4,
-				"priceGhost": 15,
-				"default": false,
-				"id": "timerOptionYes3zxcasd",
-				"image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg",
-				"comment": "We will run Mythic+ dungeon guaranted within timer",
-				"richComment": "We will run Mythic+ dungeon guaranted within timer <a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>"
-			},
-			{
-				"name": "Within Timer",
-				"comment": "We will run Mythic+ dungeon guaranted within timer",
-				"price": 5,
-				"default": false,
-				"id": "timerOptionYes4zxcasd",
-				"image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
-			},
-			{
-				"name": "Within Timer",
-				"comment": "We will run Mythic+ dungeon guaranted within timer",
-				"price": 5,
-				"priceGhost": 15,
-				"default": false,
-				"id": "timerOptionYes5zxcasd",
-				"image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
-			},
-			{
-				"name": "Within Timer",
-				"comment": "We will run Mythic+ dungeon guaranted within timer",
-				"price": 5,
-				"priceGhost": 15,
-				"default": false,
-				"id": "timerOptionYes6zxcasd",
-				"image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
-			}
-		]
-	}
+  {
+    "title": "Items group",
+    "id": "items",
+    "size": "is-full",
+    "type": "checkbox",
+    "values": [
+      {
+        "name": "Hallen der Hingabe",
+        "itemLink": "<a href=\"https://de.wowhead.com/achievement=14194/hallen-der-hingabe\" target=\"_blank\" title=\"Halls of Devotion\" rel=\"noopener noreferrer\">Hallen der Hingabe</a>",
+        "comment": "comment",
+        "richComment": "<a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>",
+        "price": 10.0,
+        "default": false,
+        "id": "items1"
+      },
+      {
+        "name": "Verschlüsselte Schrift aus Ny'alotha",
+        "itemLink": "<a href=\"https://ptr.wowhead.com/item=169223/ashjrakamas-shroud-of-resolve\" title=\"Ashjra'kamas, Shroud of Resolve\" target=\"_blank\" rel=\"noopener noreferrer\">Ashjra'kamas, Shroud of Resolve</a>",
+        "comment": "comment",
+        "price": 20.0,
+        "default": false,
+        "id": "items2",
+        "parents": ["simple-select8"]
+      }
+    ]
+  },
+  {
+    "title": "custom select image",
+    "label": "",
+    "comment": "Comment for select",
+    "size": "is-half",
+    "id": "select-simple",
+    "type": "select",
+    "values": [
+      {
+        "name": "simple-select1",
+        "price": 17.95,
+        "default": true,
+        "id": "simple-select7"
+      },
+      {
+        "name": "simple-select2",
+        "price": 19.95,
+        "default": false,
+        "id": "simple-select8",
+        "comment": "option comment"
+      },
+      {
+        "name": "simple-select3",
+        "price": 21.95,
+        "default": false,
+        "id": "simple-select9"
+      },
+      {
+        "name": "simple-select4",
+        "price": 23.95,
+        "default": false,
+        "id": "simple-select10"
+      },
+      {
+        "name": "simple-select5",
+        "price": 26.95,
+        "default": false,
+        "id": "simple-select11"
+      }
+    ]
+  },
+  {
+    "title": "Switch",
+    "id": "switch",
+    "size": "is-half",
+    "type": "switch",
+    "values": [
+      {
+        "name": "Sharing",
+        "comment": "Our player logs in to your character and plays during the boost",
+        "price": 5,
+        "default": false,
+        "id": "playMethodValueAcc5"
+      },
+      {
+        "name": "Selfplay",
+        "comment": "Join our players team and play yourself during the boost",
+        "price": 0,
+        "default": true,
+        "id": "playMethodValueSelf10"
+      }
+    ]
+  },
+  {
+    "title": "Switch",
+    "id": "switch2",
+    "size": "is-full",
+    "type": "switch",
+    "values": [
+      {
+        "name": "Sharing",
+        "comment": "Our player logs in to your character and plays during the boost",
+        "price": 5,
+        "priceLabel": 0,
+        "default": true,
+        "id": "1playMethodValueAcc5"
+      },
+      {
+        "name": "Selfplay",
+        "comment": "Join our players team and play yourself during the boost",
+        "price": 0,
+        "priceLabel": 0,
+        "default": false,
+        "id": "2playMethodValueSelf10"
+      },
+      {
+        "name": "Sharing",
+        "comment": "Our player logs in to your character and plays during the boost",
+        "price": 5,
+        "default": false,
+        "id": "3playMethodValueAcc5"
+      },
+      {
+        "name": "Selfplay",
+        "comment": "Join our players team and play yourself during the boost",
+        "price": 0,
+        "default": false,
+        "id": "4playMethodValueSelf10"
+      },
+      {
+        "name": "Sharing",
+        "comment": "Our player logs in to your character and plays during the boost",
+        "price": 5,
+        "default": false,
+        "id": "5playMethodValueAcc5"
+      }
+    ]
+  },
+  {
+    "title": "Image Radio",
+    "id": "playMethodasd",
+    "size": "is-half",
+    "type": "radio",
+    "required": true,
+    "values": [
+      {
+        "name": "Account Sharing",
+        "comment": "Our player logs in to your character and plays during the boost",
+        "price": 5,
+        "default": false,
+        "id": "playMethodValueAccasd",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
+      },
+      {
+        "name": "Selfplay",
+        "comment": "Join our players team and play yourself during the boost",
+        "price": 0,
+        "default": false,
+        "id": "playMethodValueSelf0asd",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
+      },
+      {
+        "name": "Selfplay",
+        "comment": "Join our players team and play yourself during the boost",
+        "price": 0,
+        "disabled": true,
+        "default": false,
+        "id": "playMethodValueSelf0asd00",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Timer Option",
+    "comment": "Choose your run whether within timer or not",
+    "id": "timerOptionzxc",
+    "size": "is-full",
+    "type": "checkbox",
+    "invalidMessage": "Custom message",
+    "required": true,
+    "minLimit": 2,
+    "maxLimit": 3,
+    "values": [
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 0,
+        "default": false,
+        "id": "timerOptionYes1zxc",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 3,
+        "default": false,
+        "id": "timerOptionYes2zxc",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 4,
+        "default": false,
+        "id": "timerOptionYes3zxc",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 5,
+        "default": false,
+        "id": "timerOptionYes4zxc",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 5,
+        "default": false,
+        "id": "timerOptionYes5zxc",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 5,
+        "default": false,
+        "id": "timerOptionYes6zxc",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Widget Notification",
+    "id": "widget",
+    "type": "hidden",
+    "values": [
+      {
+        "name": "WIDGET",
+        "comment": "",
+        "price": 0,
+        "default": true,
+        "id": "widget"
+      }
+    ]
+  },
+  {
+    "title": "Input",
+    "comment": "Comment for input",
+    "id": "input3",
+    "required": true,
+    "size": "is-full",
+    "type": "text-input",
+    "values": [
+      {
+        "name": "",
+        "price": 0,
+        "default": true,
+        "id": "input4"
+      }
+    ]
+  },
+  {
+    "title": "Input",
+    "comment": "Comment for input",
+    "id": "input",
+    "size": "is-half",
+    "type": "text-input",
+    "values": [
+      {
+        "name": "",
+        "price": 0,
+        "default": true,
+        "id": "input1"
+      }
+    ]
+  },
+  {
+    "title": "custom select image",
+    "label": "",
+    "comment": "Comment for select",
+    "size": "is-full",
+    "id": "select-custom36",
+    "type": "select-custom",
+    "values": [
+      {
+        "name": "custom-select1",
+        "price": 17.95,
+        "default": true,
+        "id": "custom-select37"
+      },
+      {
+        "name": "custom-select2",
+        "price": 19.95,
+        "default": false,
+        "id": "custom-select38",
+        "comment": "option comment"
+      },
+      {
+        "name": "custom-select3",
+        "price": 21.95,
+        "default": false,
+        "id": "custom-select39"
+      },
+      {
+        "name": "custom-select4",
+        "price": 23.95,
+        "default": false,
+        "id": "custom-select310"
+      },
+      {
+        "name": "custom-select5",
+        "price": 26.95,
+        "default": false,
+        "id": "custom-select311"
+      }
+    ]
+  },
+  {
+    "title": "custom select image",
+    "label": "",
+    "comment": "Comment for select",
+    "size": "is-half",
+    "id": "select-custom6",
+    "type": "select-custom",
+    "image": "https://cdn.shopify.com/s/files/1/0987/2678/files/wow-farm-transmog_91e71ca3-3d64-41a1-8309-5061fd572a0f.png?4880513842382269742",
+    "values": [
+      {
+        "name": "custom-select1",
+        "price": 17.95,
+        "default": true,
+        "id": "custom-select7"
+      },
+      {
+        "name": "custom-select2",
+        "price": 19.95,
+        "default": false,
+        "id": "custom-select8",
+        "comment": "option comment"
+      },
+      {
+        "name": "custom-select3",
+        "price": 21.95,
+        "default": false,
+        "id": "custom-select9"
+      },
+      {
+        "name": "custom-select4",
+        "price": 23.95,
+        "default": false,
+        "id": "custom-select10"
+      },
+      {
+        "name": "custom-select5",
+        "price": 26.95,
+        "default": false,
+        "id": "custom-select11"
+      }
+    ]
+  },
+  {
+    "title": "custom select",
+    "label": "",
+    "comment": "Comment for select",
+    "size": "is-half",
+    "id": "select-custom",
+    "type": "select-custom",
+    "values": [
+      {
+        "name": "custom-select1",
+        "price": 17.95,
+        "default": true,
+        "id": "custom-select1",
+        "image": "https://cdn.shopify.com/s/files/1/0987/2678/files/raid1.png?2233282437125190411"
+      },
+      {
+        "name": "custom-select2",
+        "price": 19.95,
+        "default": false,
+        "id": "custom-select2",
+        "comment": "option comment",
+        "image": "https://cdn.shopify.com/s/files/1/0987/2678/files/trophy3.png?2233282437125190411"
+      },
+      {
+        "name": "custom-select3",
+        "price": 21.95,
+        "default": false,
+        "id": "custom-select3",
+        "image": "https://cdn.shopify.com/s/files/1/0987/2678/files/raid1.png?2233282437125190411"
+      },
+      {
+        "name": "custom-select4",
+        "price": 23.95,
+        "default": false,
+        "id": "custom-select4",
+        "image": "https://cdn.shopify.com/s/files/1/0987/2678/files/raid1.png?2233282437125190411"
+      },
+      {
+        "name": "custom-select5",
+        "price": 26.95,
+        "default": false,
+        "id": "custom-select5",
+        "image": "https://cdn.shopify.com/s/files/1/0987/2678/files/raid1.png?2233282437125190411"
+      }
+    ]
+  },
+  {
+    "title": "Key",
+    "label": "Pick a key level:",
+    "id": "key3",
+    "size": "is-full",
+    "type": "select-key",
+    "quick": ["keyValue103", "keyValue125"],
+    "values": [
+      {
+        "name": "MYTHIC +10",
+        "priceLabel": 17.95,
+        "price": 17.95,
+        "default": true,
+        "id": "keyValue103"
+      },
+      {
+        "name": "MYTHIC +11",
+        "priceLabel": 19.95,
+        "price": 19.95,
+        "default": false,
+        "id": "keyValue114"
+      },
+      {
+        "name": "MYTHIC +12",
+        "priceLabel": 21.95,
+        "price": 21.95,
+        "default": false,
+        "id": "keyValue125"
+      },
+      {
+        "name": "MYTHIC +13",
+        "priceLabel": 23.95,
+        "price": 23.95,
+        "default": false,
+        "id": "keyValue136"
+      },
+      {
+        "name": "MYTHIC +14",
+        "priceLabel": 26.95,
+        "price": 26.95,
+        "default": false,
+        "id": "keyValue147"
+      },
+      {
+        "name": "MYTHIC +15",
+        "priceLabel": 29.95,
+        "price": 29.95,
+        "default": false,
+        "id": "keyValue158"
+      }
+    ]
+  },
+  {
+    "title": "Key",
+    "label": "Pick a key level:",
+    "id": "key2",
+    "size": "is-half",
+    "type": "select-key",
+    "quick": ["keyValue10", "keyValue15"],
+    "values": [
+      {
+        "name": "MYTHIC +10",
+        "priceLabel": 17.95,
+        "price": 17.95,
+        "default": true,
+        "id": "keyValue10"
+      },
+      {
+        "name": "MYTHIC +11",
+        "priceLabel": 19.95,
+        "price": 19.95,
+        "default": false,
+        "id": "keyValue11"
+      },
+      {
+        "name": "MYTHIC +12",
+        "priceLabel": 21.95,
+        "price": 21.95,
+        "default": false,
+        "id": "keyValue12"
+      },
+      {
+        "name": "MYTHIC +13",
+        "priceLabel": 23.95,
+        "price": 23.95,
+        "default": false,
+        "id": "keyValue13"
+      },
+      {
+        "name": "MYTHIC +14",
+        "priceLabel": 26.95,
+        "price": 26.95,
+        "default": false,
+        "id": "keyValue14"
+      },
+      {
+        "name": "MYTHIC +15",
+        "priceLabel": 29.95,
+        "price": 29.95,
+        "default": false,
+        "id": "keyValue15"
+      }
+    ]
+  },
+  {
+    "title": "Play Method",
+    "id": "playMethod",
+    "size": "is-half",
+    "type": "radio",
+    "values": [
+      {
+        "name": "Account Sharing",
+        "comment": "Our player logs in to your character and plays during the boost",
+        "price": 5,
+        "default": false,
+        "id": "playMethodValueAcc"
+      },
+      {
+        "name": "Selfplay",
+        "comment": "Join our players team and play yourself during the boost",
+        "price": 0,
+        "default": true,
+        "id": "playMethodValueSelf0"
+      },
+      {
+        "name": "Selfplay",
+        "comment": "Join our players team and play yourself during the boost",
+        "price": 0,
+        "disabled": true,
+        "default": true,
+        "id": "playMethodValueSelf000"
+      }
+    ]
+  },
+  {
+    "title": "Timer Option",
+    "comment": "Choose your run whether within timer or not",
+    "id": "timerOption",
+    "size": "is-full",
+    "type": "checkbox",
+    "values": [
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 0,
+        "default": false,
+        "id": "timerOptionYes1",
+        "richComment": "<a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>",
+        "series": "timerOptionYes",
+        "parents": ["keyValue10", "keyValue11", "keyValue12"]
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 0,
+        "default": false,
+        "id": "timerOptionYes10000",
+        "series": "timerOptionYes",
+        "disabled": true,
+        "parents": ["keyValue10", "keyValue11", "keyValue12"]
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 3,
+        "default": false,
+        "id": "timerOptionYes2",
+        "series": "timerOptionYes",
+        "parents": ["keyValue13"]
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 4,
+        "default": false,
+        "id": "timerOptionYes3",
+        "series": "timerOptionYes",
+        "parents": ["keyValue14"]
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 5,
+        "default": false,
+        "id": "timerOptionYes4",
+        "series": "timerOptionYes",
+        "parents": ["keyValue15"]
+      }
+    ]
+  },
+  {
+    "title": "Loot Trading",
+    "id": "loottrade",
+    "size": "is-full",
+    "type": "radio",
+    "values": [
+      {
+        "name": "Personal Loot",
+        "comment": "Run with Personal Loot option means that quantity of items you will get fully depends on your luck, which we wish you most of all :)",
+        "price": 0,
+        "default": true,
+        "id": "loottrade10No",
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
+      },
+      {
+        "name": "+1 Loot-Trader",
+        "comment": "There will be 1 player with the same armor type in your group who will trade you all items he MAY get as reward from the end of dungeon chest and thus this item IS NOT GUARANTEED. ",
+        "price": 3,
+        "default": false,
+        "id": "loottrade10x1",
+        "parents": ["keyValue10"]
+      },
+      {
+        "name": "+2 Loot-Traders",
+        "comment": "There will be 2 players with the same armor type in your group who will trade you all items they may get as reward from the end of dungeon chest and thus the items ARE NOT GUARANTEED.",
+        "price": 6,
+        "default": false,
+        "id": "loottrade10x2",
+        "parents": ["keyValue10"]
+      },
+      {
+        "name": "+1 Loot-Trader",
+        "comment": "There will be 1 player with the same armor type in your group who will trade you all items he MAY get as reward from the end of dungeon chest and thus this item IS NOT GUARANTEED. ",
+        "price": 4,
+        "default": false,
+        "id": "loottrade11x1",
+        "parents": ["keyValue11", "keyValue12", "keyValue13"]
+      },
+      {
+        "name": "+2 Loot-Traders",
+        "comment": "There will be 2 players with the same armor type in your group who will trade you all items they may get as reward from the end of dungeon chest and thus the items ARE NOT GUARANTEED.",
+        "price": 8,
+        "default": false,
+        "id": "loottrade11x2",
+        "parents": ["keyValue11", "keyValue12", "keyValue13"]
+      },
+      {
+        "name": "+1 Loot-Trader",
+        "comment": "There will be 1 player with the same armor type in your group who will trade you all items he MAY get as reward from the end of dungeon chest and thus this item IS NOT GUARANTEED. ",
+        "price": 5,
+        "default": false,
+        "id": "loottrade14x1",
+        "parents": ["keyValue14", "keyValue15"]
+      },
+      {
+        "name": "+2 Loot-Traders",
+        "comment": "There will be 2 players with the same armor type in your group who will trade you all items they may get as reward from the end of dungeon chest and thus the items ARE NOT GUARANTEED.",
+        "price": 10,
+        "default": false,
+        "id": "loottrade14x2",
+        "parents": ["keyValue14", "keyValue15"]
+      }
+    ]
+  },
+  {
+    "title": "Loot Trading",
+    "id": "loottrade1",
+    "size": "is-half",
+    "type": "radio",
+    "values": [
+      {
+        "name": "Personal Loot",
+        "comment": "Run with Personal Loot option means that quantity of items you will get fully depends on your luck, which we wish you most of all :)",
+        "price": 0,
+        "default": true,
+        "id": "loottrade10No2",
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
+      },
+      {
+        "name": "+1 Loot-Trader",
+        "comment": "There will be 1 player with the same armor type in your group who will trade you all items he MAY get as reward from the end of dungeon chest and thus this item IS NOT GUARANTEED. ",
+        "price": 3,
+        "default": false,
+        "id": "loottrade10x13",
+        "parents": ["keyValue10"]
+      },
+      {
+        "name": "+2 Loot-Traders",
+        "comment": "There will be 2 players with the same armor type in your group who will trade you all items they may get as reward from the end of dungeon chest and thus the items ARE NOT GUARANTEED.",
+        "price": 6,
+        "default": false,
+        "id": "loottrade10x24",
+        "series": "test",
+        "parents": ["keyValue10"]
+      },
+      {
+        "name": "+1 Loot-Trader",
+        "comment": "There will be 1 player with the same armor type in your group who will trade you all items he MAY get as reward from the end of dungeon chest and thus this item IS NOT GUARANTEED. ",
+        "price": 4,
+        "default": false,
+        "id": "loottrade11x15",
+        "parents": ["keyValue11", "keyValue12", "keyValue13"]
+      },
+      {
+        "name": "+2 Loot-Traders",
+        "comment": "There will be 2 players with the same armor type in your group who will trade you all items they may get as reward from the end of dungeon chest and thus the items ARE NOT GUARANTEED.",
+        "price": 8,
+        "default": false,
+        "id": "loottrade11x26",
+        "series": "test",
+        "parents": ["keyValue11", "keyValue12", "keyValue13"]
+      },
+      {
+        "name": "+1 Loot-Trader",
+        "comment": "There will be 1 player with the same armor type in your group who will trade you all items he MAY get as reward from the end of dungeon chest and thus this item IS NOT GUARANTEED. ",
+        "price": 5,
+        "default": false,
+        "id": "loottrade14x17",
+        "parents": ["keyValue14", "keyValue15"]
+      },
+      {
+        "name": "+2 Loot-Traders",
+        "comment": "There will be 2 players with the same armor type in your group who will trade you all items they may get as reward from the end of dungeon chest and thus the items ARE NOT GUARANTEED.",
+        "price": 10,
+        "default": false,
+        "series": "test",
+        "id": "loottrade14x28",
+        "parents": ["keyValue14", "keyValue15"]
+      }
+    ]
+  },
+  {
+    "title": "Range Slider Name",
+    "label": "Range Slider Label",
+    "id": "rangeSlider00",
+    "size": "is-half",
+    "type": "range",
+    "values": [
+      {
+        "name": "op1",
+        "comment": "Comment op1",
+        "price": 5,
+        "mark": true,
+        "default": true,
+        "id": "rangeSlider01",
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
+      },
+      {
+        "name": "op2",
+        "comment": "Comment op2",
+        "price": 12,
+        "mark": true,
+        "default": false,
+        "id": "rangeSlider02",
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
+      },
+      {
+        "name": "op3",
+        "comment": "Comment op3",
+        "price": 13,
+        "mark": false,
+        "default": false,
+        "id": "rangeSlider03",
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
+      },
+      {
+        "name": "op4",
+        "comment": "Comment op4",
+        "price": 14,
+        "mark": true,
+        "default": false,
+        "id": "rangeSlider04",
+        "series": "rangeSlider04",
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
+      },
+      {
+        "name": "op4a",
+        "comment": "Comment op4a",
+        "price": 14,
+        "mark": true,
+        "default": false,
+        "series": "rangeSlider04",
+        "id": "rangeSlider04-1",
+        "parents": ["keyValue14"]
+      },
+      {
+        "name": "op5a",
+        "comment": "Comment op5a",
+        "price": 15,
+        "mark": true,
+        "default": false,
+        "series": "rangeSlider05",
+        "id": "rangeSlider05-1",
+        "parents": ["keyValue14"]
+      },
+      {
+        "name": "op5b",
+        "comment": "Comment op5b",
+        "price": 0,
+        "mark": true,
+        "default": false,
+        "series": "rangeSlider05",
+        "id": "rangeSlider05-2",
+        "parents": ["keyValue15"]
+      }
+    ]
+  },
+  {
+    "title": "Title Slider Double",
+    "label": "Label Slider Double",
+    "id": "rangeSlider01",
+    "size": "is-full",
+    "comment": "Choose your run whether within timer or not",
+    "type": "range-double",
+    "values": [
+      {
+        "name": "op1",
+        "price": 1,
+        "mark": true,
+        "default": true,
+        "id": "rangeSlider11",
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
+      },
+      {
+        "name": "op2",
+        "price": 1,
+        "mark": " ",
+        "default": false,
+        "id": "rangeSlider12",
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
+      },
+      {
+        "name": "op3",
+        "price": 1,
+        "mark": false,
+        "default": false,
+        "id": "rangeSlider13",
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
+      },
+      {
+        "name": "op4",
+        "price": 1,
+        "mark": true,
+        "default": true,
+        "id": "rangeSlider14",
+        "series": "rangeSlider04",
+        "parents": ["keyValue10", "keyValue11", "keyValue12", "keyValue13", "keyValue14", "keyValue15"]
+      },
+      {
+        "name": "op4a",
+        "price": 1,
+        "mark": true,
+        "default": false,
+        "series": "rangeSlider04",
+        "id": "rangeSlider14-1",
+        "parents": ["keyValue14"]
+      },
+      {
+        "name": "op5a",
+        "price": 1,
+        "mark": true,
+        "default": false,
+        "series": "rangeSlider05",
+        "id": "rangeSlider15-1",
+        "parents": ["keyValue14"]
+      },
+      {
+        "name": "op5b",
+        "price": 1,
+        "mark": true,
+        "default": false,
+        "series": "rangeSlider05",
+        "id": "rangeSlider15-2",
+        "parents": ["keyValue15"]
+      }
+    ]
+  },
+  {
+    "title": "Radio Rich Option",
+    "id": "playMethodasd123",
+    "type": "radio-rich",
+    "size": "is-full",
+    "cssClass": "my-4",
+    "required": true,
+    "values": [
+      {
+        "name": "Account Sharing",
+        "comment": "Our player logs in to your character and plays during the boost",
+        "price": 5,
+        "priceGhost": 15,
+        "default": false,
+        "id": "playMethodValueAccasd123",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg",
+        "imagePosition": "right",
+        "richComment": "We will run Mythic+ dungeon guaranted within timer <a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>"
+      },
+      {
+        "name": "Selfplay",
+        "comment": "Join our players team and play yourself during the boost",
+        "price": 0,
+        "priceGhost": 15,
+        "default": false,
+        "id": "playMethodValueSelf0asd123",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg",
+        "richComment": "We will run Mythic+ dungeon guaranted within timer <a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>"
+      },
+      {
+        "name": "Selfplay",
+        "comment": "Join our players team and play yourself during the boost",
+        "price": 0,
+        "priceGhost": 15,
+        "disabled": true,
+        "default": false,
+        "id": "playMethodValueSelf0asd00123",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg",
+        "imagePosition": "right",
+        "richComment": "We will run Mythic+ dungeon guaranted within timer <a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>"
+      }
+    ]
+  },
+  {
+    "title": "Checkbox Rich Option",
+    "comment": "Choose your run whether within timer or not",
+    "id": "timerOptionzxcasd",
+    "size": "is-full",
+    "type": "checkbox-rich",
+    "invalidMessage": "Custom message",
+    "required": true,
+    "minLimit": 2,
+    "maxLimit": 3,
+    "cssClass": "my-4 border border-success",
+    "values": [
+      {
+        "name": "Within Timer",
+        "price": 0,
+        "default": false,
+        "id": "timerOptionYes1zxcasd",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg",
+        "imagePosition": "right",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "richComment": "We will run Mythic+ dungeon guaranted within timer <a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>"
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 3,
+        "priceGhost": 15,
+        "default": false,
+        "id": "timerOptionYes2zxcasd",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
+      },
+      {
+        "name": "Within Timer",
+        "price": 4,
+        "priceGhost": 15,
+        "default": false,
+        "id": "timerOptionYes3zxcasd",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "richComment": "We will run Mythic+ dungeon guaranted within timer <a href=\"https://google.com\" target=\"_blank\" rel=\"noopener noreferrer\">Link</a>"
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 5,
+        "default": false,
+        "id": "timerOptionYes4zxcasd",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 5,
+        "priceGhost": 15,
+        "default": false,
+        "id": "timerOptionYes5zxcasd",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
+      },
+      {
+        "name": "Within Timer",
+        "comment": "We will run Mythic+ dungeon guaranted within timer",
+        "price": 5,
+        "priceGhost": 15,
+        "default": false,
+        "id": "timerOptionYes6zxcasd",
+        "image": "https://wow.zamimg.com/images/wow/icons/large/ability_revendreth_warrior.jpg"
+      }
+    ]
+  }
 ]
 ```
 
@@ -1893,230 +1893,230 @@ _В этом примере при переключении родительск
 
 ```json
 [
-	{
-		"title": "opt1",
-		"id": "opt1",
-		"comment": "No config",
-		"type": "checkbox",
-		"values": [
-			{
-				"name": "0",
-				"id": "opt1-0"
-			},
-			{
-				"name": "+3",
-				"price": 3,
-				"id": "opt1-1"
-			},
-			{
-				"name": "+5",
-				"price": 5,
-				"id": "opt1-2"
-			}
-		]
-	},
-	{
-		"title": "opt2",
-		"comment": "add, affectQuantity-",
-		"id": "opt2",
-		"type": "checkbox",
-		"priceRule": {
-			"affectQuantity": false
-		},
-		"values": [
-			{
-				"name": "0.5",
-				"price": 0.5,
-				"id": "opt2-0"
-			},
-			{
-				"name": "3",
-				"price": 3,
-				"id": "opt2-1"
-			},
-			{
-				"name": "5",
-				"price": 5,
-				"id": "opt2-2"
-			}
-		]
-	},
-	{
-		"title": "opt3",
-		"id": "opt3",
-		"comment": "multi, affectBasePrice+, affectQuantity+, all-options+",
-		"type": "checkbox",
-		"priceRule": {
-			"method": "multiply",
-			"viewMode": "number"
-		},
-		"values": [
-			{
-				"name": "0.5",
-				"price": 0.5,
-				"id": "opt3-0"
-			},
-			{
-				"name": "3",
-				"price": 3,
-				"comment": "rewritten viewMode",
-				"id": "opt3-1",
-				"priceRule": {
-					"viewMode": "percent"
-				}
-			},
-			{
-				"name": "5",
-				"comment": "rewritten calcType",
-				"price": 5,
-				"id": "opt3-2",
-				"priceRule": {
-					"method": "add"
-				}
-			}
-		]
-	},
-	{
-		"title": "opt4",
-		"comment": "multi, affectBasePrice+, affectQuantity+, opt1+",
-		"id": "opt4",
-		"type": "checkbox",
-		"priceRule": {
-			"method": "multiply",
-			"affectOptions": ["opt1", "opt1-1"]
-		},
-		"values": [
-			{
-				"name": "0",
-				"price": 0,
-				"id": "opt4-0"
-			},
-			{
-				"name": "3",
-				"price": 3,
-				"id": "opt4-1"
-			},
-			{
-				"name": "5",
-				"price": 5,
-				"id": "opt4-2"
-			}
-		]
-	},
-	{
-		"title": "opt5",
-		"id": "opt5",
-		"comment": "multi, affectBasePrice-, affectQuantity-, opt2+",
-		"type": "checkbox",
-		"priceRule": {
-			"method": "multiply",
-			"affectOptions": ["opt2"],
-			"affectBasePrice": false,
-			"affectQuantity": false
-		},
-		"values": [
-			{
-				"name": "0.5",
-				"price": 0.5,
-				"id": "opt5-0"
-			},
-			{
-				"name": "3",
-				"price": 3,
-				"id": "opt5-1"
-			},
-			{
-				"name": "5",
-				"price": 5,
-				"id": "opt5-2"
-			}
-		]
-	},
-	{
-		"title": "opt6",
-		"comment": "multi, affectBasePrice-, affectQuantity-, allOpt+",
-		"id": "opt6",
-		"type": "checkbox",
-		"priceRule": {
-			"method": "multiply",
-			"affectBasePrice": false,
-			"affectQuantity": false,
-			"viewMode": "number"
-		},
-		"values": [
-			{
-				"name": "0.5",
-				"price": 0.5,
-				"id": "opt6-0"
-			},
-			{
-				"name": "3",
-				"price": 3,
-				"id": "opt6-1"
-			},
-			{
-				"name": "5",
-				"price": 5,
-				"id": "opt6-2"
-			}
-		]
-	},
-	{
-		"title": "opt6",
-		"comment": "multi, affectBasePrice-, affectQuantity-, allOpt+",
-		"id": "opt7",
-		"type": "checkbox",
-		"priceRule": {
-			"method": "multiply",
-			"affectBasePrice": false,
-			"affectQuantity": false,
-			"viewMode": "number"
-		},
-		"values": [
-			{
-				"name": "0.5",
-				"price": 0.5,
-				"id": "opt7-0"
-			},
-			{
-				"name": "3",
-				"price": 3,
-				"id": "opt7-1"
-			},
-			{
-				"name": "5",
-				"price": 5,
-				"id": "opt7-2"
-			}
-		]
-	},
-	{
-		"title": "opt8",
-		"id": "opt8",
-		"comment": "multi, affectBasePrice-, affectQuantity-, opt2+",
-		"type": "checkbox",
-		"priceRule": {
-			"method": "add",
-			"affectOptions": ["opt2"]
-		},
-		"values": [
-			{
-				"name": "0.5",
-				"price": 0.5,
-				"id": "opt8-0"
-			},
-			{
-				"name": "3",
-				"price": 3,
-				"id": "opt8-1"
-			},
-			{
-				"name": "5",
-				"price": 5,
-				"id": "opt8-2"
-			}
-		]
-	}
+  {
+    "title": "opt1",
+    "id": "opt1",
+    "comment": "No config",
+    "type": "checkbox",
+    "values": [
+      {
+        "name": "0",
+        "id": "opt1-0"
+      },
+      {
+        "name": "+3",
+        "price": 3,
+        "id": "opt1-1"
+      },
+      {
+        "name": "+5",
+        "price": 5,
+        "id": "opt1-2"
+      }
+    ]
+  },
+  {
+    "title": "opt2",
+    "comment": "add, affectQuantity-",
+    "id": "opt2",
+    "type": "checkbox",
+    "priceRule": {
+      "affectQuantity": false
+    },
+    "values": [
+      {
+        "name": "0.5",
+        "price": 0.5,
+        "id": "opt2-0"
+      },
+      {
+        "name": "3",
+        "price": 3,
+        "id": "opt2-1"
+      },
+      {
+        "name": "5",
+        "price": 5,
+        "id": "opt2-2"
+      }
+    ]
+  },
+  {
+    "title": "opt3",
+    "id": "opt3",
+    "comment": "multi, affectBasePrice+, affectQuantity+, all-options+",
+    "type": "checkbox",
+    "priceRule": {
+      "method": "multiply",
+      "viewMode": "number"
+    },
+    "values": [
+      {
+        "name": "0.5",
+        "price": 0.5,
+        "id": "opt3-0"
+      },
+      {
+        "name": "3",
+        "price": 3,
+        "comment": "rewritten viewMode",
+        "id": "opt3-1",
+        "priceRule": {
+          "viewMode": "percent"
+        }
+      },
+      {
+        "name": "5",
+        "comment": "rewritten calcType",
+        "price": 5,
+        "id": "opt3-2",
+        "priceRule": {
+          "method": "add"
+        }
+      }
+    ]
+  },
+  {
+    "title": "opt4",
+    "comment": "multi, affectBasePrice+, affectQuantity+, opt1+",
+    "id": "opt4",
+    "type": "checkbox",
+    "priceRule": {
+      "method": "multiply",
+      "affectOptions": ["opt1", "opt1-1"]
+    },
+    "values": [
+      {
+        "name": "0",
+        "price": 0,
+        "id": "opt4-0"
+      },
+      {
+        "name": "3",
+        "price": 3,
+        "id": "opt4-1"
+      },
+      {
+        "name": "5",
+        "price": 5,
+        "id": "opt4-2"
+      }
+    ]
+  },
+  {
+    "title": "opt5",
+    "id": "opt5",
+    "comment": "multi, affectBasePrice-, affectQuantity-, opt2+",
+    "type": "checkbox",
+    "priceRule": {
+      "method": "multiply",
+      "affectOptions": ["opt2"],
+      "affectBasePrice": false,
+      "affectQuantity": false
+    },
+    "values": [
+      {
+        "name": "0.5",
+        "price": 0.5,
+        "id": "opt5-0"
+      },
+      {
+        "name": "3",
+        "price": 3,
+        "id": "opt5-1"
+      },
+      {
+        "name": "5",
+        "price": 5,
+        "id": "opt5-2"
+      }
+    ]
+  },
+  {
+    "title": "opt6",
+    "comment": "multi, affectBasePrice-, affectQuantity-, allOpt+",
+    "id": "opt6",
+    "type": "checkbox",
+    "priceRule": {
+      "method": "multiply",
+      "affectBasePrice": false,
+      "affectQuantity": false,
+      "viewMode": "number"
+    },
+    "values": [
+      {
+        "name": "0.5",
+        "price": 0.5,
+        "id": "opt6-0"
+      },
+      {
+        "name": "3",
+        "price": 3,
+        "id": "opt6-1"
+      },
+      {
+        "name": "5",
+        "price": 5,
+        "id": "opt6-2"
+      }
+    ]
+  },
+  {
+    "title": "opt6",
+    "comment": "multi, affectBasePrice-, affectQuantity-, allOpt+",
+    "id": "opt7",
+    "type": "checkbox",
+    "priceRule": {
+      "method": "multiply",
+      "affectBasePrice": false,
+      "affectQuantity": false,
+      "viewMode": "number"
+    },
+    "values": [
+      {
+        "name": "0.5",
+        "price": 0.5,
+        "id": "opt7-0"
+      },
+      {
+        "name": "3",
+        "price": 3,
+        "id": "opt7-1"
+      },
+      {
+        "name": "5",
+        "price": 5,
+        "id": "opt7-2"
+      }
+    ]
+  },
+  {
+    "title": "opt8",
+    "id": "opt8",
+    "comment": "multi, affectBasePrice-, affectQuantity-, opt2+",
+    "type": "checkbox",
+    "priceRule": {
+      "method": "add",
+      "affectOptions": ["opt2"]
+    },
+    "values": [
+      {
+        "name": "0.5",
+        "price": 0.5,
+        "id": "opt8-0"
+      },
+      {
+        "name": "3",
+        "price": 3,
+        "id": "opt8-1"
+      },
+      {
+        "name": "5",
+        "price": 5,
+        "id": "opt8-2"
+      }
+    ]
+  }
 ]
 ```
 
@@ -2126,105 +2126,105 @@ _В этом примере при переключении родительск
 
 ```json
 [
-	{
-		"id": "portals0",
-		"type": "portal",
-		"size": "is-full",
-		"values": [
-			{
-				"name": "",
-				"id": "portal0"
-			}
-		]
-	},
-	{
-		"title": "Select End game Build",
-		"id": "build",
-		"size": "is-full",
-		"type": "radio-rich",
-		"required": true,
-		"values": [
-			{
-				"price": 0,
-				"name": "Whirlwind",
-				"image": "https://mmonster.co/media/89/0c/e9/1686847139/wirlwind.webp",
-				"default": true,
-				"id": "Whirlwind",
-				"portals": [
-					{
-						"target": "portal1",
-						"content": "<div>Whirlwind - portal1 - order1 - onSelect</div>",
-						"show": "onSelect",
-						"order": 1
-					},
-					{
-						"target": "portal1",
-						"content": "<div>Whirlwind - portal1 - order2 - always</div>",
-						"order": 2
-					},
-					{
-						"target": "portal2",
-						"content": "<div>Whirlwind - portal2 - order1 - always</div>",
-						"order": 1
-					}
-				]
-			},
-			{
-				"price": 0,
-				"name": "Rend",
-				"image": "https://mmonster.co/media/9c/13/3a/1686847139/rend.webp",
-				"id": "Rend",
-				"richComment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dolores commodi cupiditate veniam. Amet non exercitationem odio? Animi cupiditate reprehenderit, aliquam ab quia quo illo ducimus consectetur tenetur veniam error?",
-				"portals": [
-					{
-						"target": "portal0",
-						"content": "<div>Rend - portal0 - onSelect - order1</div>",
-						"show": "onSelect",
-						"order": 1
-					},
-					{
-						"target": "portal1",
-						"content": "<div>Rend - portal1 - onSelect - order1</div>",
-						"show": "onSelect",
-						"order": 1
-					},
-					{
-						"target": "portal2",
-						"content": "<div>Rend - portal2 - onSelect - order1</div>",
-						"show": "onSelect",
-						"order": 1
-					}
-				]
-			},
-			{
-				"price": 0,
-				"name": "HotA",
-				"image": "https://mmonster.co/media/c4/b3/6c/1686847139/hota.webp",
-				"id": "HotA",
-				"portals": [
-					{
-						"target": "portal1",
-						"content": "<div>HotA - default - order2</div>",
-						"order": 2
-					}
-				]
-			}
-		]
-	},
-	{
-		"id": "portals1",
-		"type": "portal",
-		"size": "is-full",
-		"values": [
-			{
-				"name": "",
-				"id": "portal1"
-			},
-			{
-				"name": "",
-				"id": "portal2"
-			}
-		]
-	}
+  {
+    "id": "portals0",
+    "type": "portal",
+    "size": "is-full",
+    "values": [
+      {
+        "name": "",
+        "id": "portal0"
+      }
+    ]
+  },
+  {
+    "title": "Select End game Build",
+    "id": "build",
+    "size": "is-full",
+    "type": "radio-rich",
+    "required": true,
+    "values": [
+      {
+        "price": 0,
+        "name": "Whirlwind",
+        "image": "https://mmonster.co/media/89/0c/e9/1686847139/wirlwind.webp",
+        "default": true,
+        "id": "Whirlwind",
+        "portals": [
+          {
+            "target": "portal1",
+            "content": "<div>Whirlwind - portal1 - order1 - onSelect</div>",
+            "show": "onSelect",
+            "order": 1
+          },
+          {
+            "target": "portal1",
+            "content": "<div>Whirlwind - portal1 - order2 - always</div>",
+            "order": 2
+          },
+          {
+            "target": "portal2",
+            "content": "<div>Whirlwind - portal2 - order1 - always</div>",
+            "order": 1
+          }
+        ]
+      },
+      {
+        "price": 0,
+        "name": "Rend",
+        "image": "https://mmonster.co/media/9c/13/3a/1686847139/rend.webp",
+        "id": "Rend",
+        "richComment": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dolores commodi cupiditate veniam. Amet non exercitationem odio? Animi cupiditate reprehenderit, aliquam ab quia quo illo ducimus consectetur tenetur veniam error?",
+        "portals": [
+          {
+            "target": "portal0",
+            "content": "<div>Rend - portal0 - onSelect - order1</div>",
+            "show": "onSelect",
+            "order": 1
+          },
+          {
+            "target": "portal1",
+            "content": "<div>Rend - portal1 - onSelect - order1</div>",
+            "show": "onSelect",
+            "order": 1
+          },
+          {
+            "target": "portal2",
+            "content": "<div>Rend - portal2 - onSelect - order1</div>",
+            "show": "onSelect",
+            "order": 1
+          }
+        ]
+      },
+      {
+        "price": 0,
+        "name": "HotA",
+        "image": "https://mmonster.co/media/c4/b3/6c/1686847139/hota.webp",
+        "id": "HotA",
+        "portals": [
+          {
+            "target": "portal1",
+            "content": "<div>HotA - default - order2</div>",
+            "order": 2
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "portals1",
+    "type": "portal",
+    "size": "is-full",
+    "values": [
+      {
+        "name": "",
+        "id": "portal1"
+      },
+      {
+        "name": "",
+        "id": "portal2"
+      }
+    ]
+  }
 ]
 ```
