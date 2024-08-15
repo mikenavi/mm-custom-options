@@ -1,6 +1,6 @@
 ### v2.3.0 UPDATED 15/08/2024
 
-- Тип опции `schedule`
+- [Тип опции `schedule`](#schedule)
 - `config-schedule` тип записи в страпи
 - Удалена поддержка `hp-event`
 
