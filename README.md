@@ -1,3 +1,7 @@
+### v2.4.1 UPDATED 30/11/2024
+
+- `passToDeal` и `_` теперь не передаются в ордер дискорда
+
 ### v2.4.0 UPDATED 24/09/2024
 
 - [Тип опции `multiselect`](#multiselect)
